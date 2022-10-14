@@ -1,0 +1,164 @@
+<div class="header">
+    <div class="box-hotline">
+        <label class="lbl-h2-header">
+            HOTLINE: 0945348008
+        </label>
+    </div>
+    <div class="box-func">
+        <div *ngIf="!isSlide || !isMobile"><img style="height: 30px; margin-top: 15px;"
+                src="../../../../assets/image/main/icon search.png" /></div>
+        <div>
+            <img style="height: 42px; margin-top: 10px;" src="../../../../assets/image/main/notification.png" />
+        </div>
+        <div><a [routerLink]="['/mua-o-dau']"><img
+                    style="height: 25px; margin-top: 10px; margin-left: 16px; width: 45px;"
+                    src="../../../../assets/image/main/mua_o_dau.png" /></a>
+            <div><a [routerLink]="['/mua-o-dau']">Mua ở đâu</a></div>
+        </div>
+        <div *ngIf="!isSlide || !isMobile" style="margin-left: 35px;"><img
+                style="height: 28px; margin-top: 7px; margin-left: 22px;"
+                src="../../../../assets/image/main/tai-khoan.png" />
+            <div>Tài Khoản</div>
+        </div>
+        <div *ngIf="!isSlide || !isMobile"><img style="height: 30px; margin-top: 15px; margin-right: 20px;"
+                src="../../../../assets/image/main/gio-hang.png" /></div>
+    </div>
+</div>
+<div #menu class="menu" [class]="(!showmenu && showintroduce) ? 'sub' : (!showintroduce && !showmenu) ? 'sub2' : ''">
+    <div class="menu-mobile">
+        <input type="checkbox" id="openmenu" class="hamburger-checkbox">
+        <div class="hamburger-icon">
+            <label for="openmenu" id="hamburger-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="menu-pane">
+            <nav>
+                <ul>
+                    <li>
+                        <a [routerLink]="['/']">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a>Về Ngỗng</a>
+                        <ul>
+                            <li><a [routerLink]="['/introduce']">Sơ lược về Ngỗng</a></li>
+                            <li><a [routerLink]="['/news']">Báo chí nói gì về ngỗng</a></li>
+                            <li><a [routerLink]="['/production-system']">Hệ thống sản xuất và quản lý</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>Sản phẩm</a>
+                        <ul>
+                            <li><a [routerLink]="['/introduce']">Danh mục sản phẩm 1</a></li>
+                            <li><a [routerLink]="['/news']">Danh mục sản phẩm 2</a></li>
+                            <li><a [routerLink]="['/production-system']">Danh mục sản phẩm 1</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>Dự Án</a>
+                        <ul>
+                            <li><a [routerLink]="['/introduce']">Chuyến đi của Ngỗng</a></li>
+                            <li><a [routerLink]="['/news']">Dự án khác</a></li>
+                            <li><a [routerLink]="['/production-system']">Danh mục sản phẩm 1</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/chuyen-cua-ngong']">Chuyện của Ngỗng</a>
+                    </li>
+                    <li>
+                        <a>Hợp Tác</a>
+                        <ul>
+                            <li><a [routerLink]="['/introduce']">Chính sách đại lý ctv-new</a></li>
+                            <li><a [routerLink]="['/news']">Hệ thống đối tác</a></li>
+                            <li><a [routerLink]="['/production-system']">Tuyển dụng new</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/lien-he']">Liên Hệ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="box-image-header">
+        <a [routerLink]="['/']"><img [src]="image.main.logo"
+                alt="Ngỗng - Đồng Hành Xây Dựng Sinh Thái Nông Nghiệp Bền Vững"></a>
+    </div>
+    <div class="drop">
+        <ul>
+            <li>
+                <a [routerLink]="['/']">Trang chủ</a>
+            </li>
+            <li>
+                <a>Về Ngỗng</a>
+                <ul>
+                    <li><a [routerLink]="['/introduce']">Sơ lược về Ngỗng</a></li>
+                    <li><a [routerLink]="['/news']">Báo chí nói gì về ngỗng</a></li>
+                    <li><a [routerLink]="['/production-system']">Hệ thống sản xuất và quản lý</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Sản phẩm</a>
+                <ul>
+                    <li><a [routerLink]="['/introduce']">Danh mục sản phẩm 1</a></li>
+                    <li><a [routerLink]="['/news']">Danh mục sản phẩm 2</a></li>
+                    <li><a [routerLink]="['/production-system']">Danh mục sản phẩm 1</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Dự Án</a>
+                <ul>
+                    <li><a [routerLink]="['/introduce']">Chuyến đi của Ngỗng</a></li>
+                    <li><a [routerLink]="['/news']">Dự án khác</a></li>
+                    <li><a [routerLink]="['/production-system']">Danh mục sản phẩm 1</a></li>
+                </ul>
+            </li>
+            <li>
+                <a [routerLink]="['/chuyen-cua-ngong']">Chuyện của Ngỗng</a>
+            </li>
+            <li>
+                <a>Hợp Tác</a>
+                <ul>
+                    <li><a [routerLink]="['/introduce']">Chính sách đại lý ctv-new</a></li>
+                    <li><a [routerLink]="['/news']">Hệ thống đối tác</a></li>
+                    <li><a [routerLink]="['/production-system']">Tuyển dụng new</a></li>
+                </ul>
+            </li>
+            <li>
+                <a [routerLink]="['/lien-he']">Liên Hệ</a>
+            </li>
+        </ul>
+    </div>
+    <div class="utilities" *ngIf="isSlide || isMobile">
+        <div *ngIf="!isMobile"><img style="width: 30px; margin-top: 15px;"
+                src="../../../../assets/image/main/icon search.png" /></div>
+        <div [class]="!isMobile ? 'image-tk' : ''"><img src="../../../../assets/image/main/tai-khoan.png" />
+            <div *ngIf="!isMobile">Tài Khoản</div>
+        </div>
+        <div [class]="!isMobile ? 'image-cart' : ''"><img src="../../../../assets/image/main/gio-hang.png" />
+        </div>
+    </div>
+</div>
+<div *ngIf="isMobile" style="
+    justify-content: center;
+    display: flex;
+    padding: 5px 0;
+    box-shadow: 0px 9px 10px 0px rgb(145 147 150 / 75%);
+    margin-bottom: 5px;
+"><input type="search" placeholder="Bạn đang tìm kiếm gì?"
+        style="width: 95%;border: 1px solid #ccc;border-radius: 5px;"></div>
+<div *ngIf="showmenu">
+    <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide interval="1000" *ngFor="let image of images">
+            <div class="picsum-img-wrapper">
+                <img [src]="image" alt="">
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+<div *ngIf="showintroduce">
+    <img style="width: 100%; max-height: 700px; border-bottom: 1px solid #790505;"
+        src="../../../../assets/image/main/gat-lua-ruoi-hai-phong-vu-thang-6.jpg" alt="">
+</div>

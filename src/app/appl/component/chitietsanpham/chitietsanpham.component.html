@@ -1,0 +1,481 @@
+<app-header3></app-header3>
+<div class="container chi-tiet-san-pham">
+    <div class="breadcrumb-small">
+        <a [routerLink]="['/']" title="Quay trở về trang chủ">Trang chủ</a>
+        <span aria-hidden="true">/</span>
+        <span>Danh mục sản phẩm</span>
+        <span aria-hidden="true">/</span>
+        <span>Chi tiết sản phẩm</span>
+    </div>
+    <div style="width: 100%;">
+        <div class="header-chi-tiet">
+            <div>
+                <img src="../../../../assets/image/main/call-removebg-preview.png" />
+                <span>DỊCH VỤ TỐI ƯU</span>
+            </div>
+            <div>
+                <img src="../../../../assets/image/main/gio-hang1-removebg-preview.png" />
+                <span>HÀNG HÓA ĐA DẠNG</span>
+            </div>
+            <div>
+                <img src="../../../../assets/image/main/san-pham-removebg-preview.png" />
+                <span>SẢN PHẨM CHÍNH HÃNG</span>
+            </div>
+            <div>
+                <img src="../../../../assets/image/main/gia-removebg-preview.png" />
+                <span>GIÁ CẢ CẠNH TRANH</span>
+            </div>
+            <div>
+                <img src="../../../../assets/image/main/giao-hang-removebg-preview.png" />
+                <span>GIAO HÀNG TOÀN QUỐC</span>
+            </div>
+        </div>
+        <div class="product-single">
+            <div class="product-single-content">
+                <div class="product-image">
+                    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"
+                        [containerStyle]="{'max-width': '640px'}" [numVisible]="5">
+                        <ng-template pTemplate="item" let-item>
+                            <img [src]="item.previewImageSrc" style="width: 100%;" />
+                        </ng-template>
+                        <ng-template pTemplate="thumbnail" let-item>
+                            <div class="grid grid-nogutter justify-content-center">
+                                <img [src]="item.thumbnailImageSrc" style="height: 50px;" />
+                            </div>
+                        </ng-template>
+                    </p-galleria>
+                </div>
+                <div class="product-content">
+                    <div class="pro-content-head clearfix">
+                        <div class="product-countdown-wrap" style="display:none">
+                            <span><img src="//theme.hstatic.net/200000170631/1000660112/14/clock.png?v=3075"
+                                    alt="countdown"></span>
+                            <div class="flashsale-countdown-label">Kết Thúc Trong</div>
+                            <div class="product-countdown"></div>
+                            <div class="flashsale-sold hide">
+                                <div>| Đã bán: <span class="flashsale_sold_number">11</span></div>
+                            </div>
+                        </div>
+                        <h1 itemprop="name">Mật Trà Kombucha Thảo Mộc</h1>
+                        <div class="review-sold">
+                            <div class="starbaprv-widget starbaprv-preview-badge starbaprv-preview-badge--with-link"
+                                data-id="1027037651" data-url="mat-tra-kombucha-thao-moc">
+                                <div class="starbap-prev-badge" data-average-rating="5.0" data-number-of-reviews="83"><a
+                                        class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                            style="color:#dfe519!important"></i></a><a
+                                        class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                            style="color:#dfe519!important"></i></a><a
+                                        class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                            style="color:#dfe519!important"></i></a><a
+                                        class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                            style="color:#dfe519!important"></i></a><a
+                                        class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                            style="color:#dfe519!important"></i></a><span
+                                        class="starbap-prev-badgetext">83 đánh
+                                        giá</span></div>
+                            </div>
+                            <div class="sold-quantity hide">(<a href="#startbap_product_reviews">Xem đánh giá</a>) | Đã
+                                bán:
+                                <span>11</span>
+                            </div>
+                        </div>
+                        <div class="pro-brand">
+                            <span class="title">Thương hiệu: <a
+                                    href="/collections/vendors?q=ngong&amp;view=vendor-alt">Ngỗng</a></span>
+                        </div>
+                        <span>|</span>
+                        <div class="pro-type">
+                            <span class="title">Loại: <a
+                                    href="/collections/types?q=mat-tra-kombucha&amp;view=type-alt">Mật trà
+                                    Kombucha</a></span>
+                        </div>
+                        <span>|</span>
+                        <div class="pro-sku ProductSku">
+                            <span class="title">Mã SP:</span> <span class="sku-number">new8938521954255</span>
+                        </div>
+                    </div>
+                    <div class="pro-price clearfix">
+                        <span class="current-price ProductPrice">250,000₫</span>
+                    </div>
+                    <div class="pro-short-desc">
+                    </div>
+                    <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm"
+                        class="form-vertical">
+                        <div class="product-variants-wrapper">
+                            <div class="selector-wrapper"><label for="productSelect-option-0">Tiêu đề</label><select
+                                    class="single-option-selector" data-option="option1" id="productSelect-option-0">
+                                    <option value="500 ml">500 ml</option>
+                                    <option value="100 ml">100 ml</option>
+                                    <option value="5 lít">5 lít</option>
+                                </select></div><select name="id" id="productSelect"
+                                class="product-single__variants hide" style="display: none;">
+                                <option selected="selected" data-sku="new8938521954255" value="1059348132">500 ml -
+                                    250,000 VND</option>
+                                <option data-sku="new8938521954330" value="1088231122">100 ml - 55,000 VND</option>
+                                <option data-sku="8938521954361" value="1088231147">5 lít - 2,300,000 VND</option>
+                            </select>
+                            <div id="product-select-watch" class="select-swatch">
+                                <div id="variant-swatch-0" class="swatch swatch-product-single clearfix"
+                                    data-option="option1" data-option-index="0">
+                                    <div class="header">Tiêu đề</div>
+                                    <div class="select-swap">
+                                        <div data-value="500 ml" class="n-sd swatch-element 500-ml">
+                                            <input class="variant-0 input-product" id="swatch-0-500-ml" type="radio"
+                                                name="option1" value="500 ml" checked="">
+
+                                            <label for="swatch-0-500-ml" class="sd">
+                                                500 ml
+                                                <img class="crossed-out"
+                                                    src="//theme.hstatic.net/200000170631/1000660112/14/soldout.png?v=3075">
+                                                <img class="img-check"
+                                                    src="//theme.hstatic.net/200000170631/1000660112/14/select-pro.png?v=3075">
+                                            </label>
+
+                                        </div>
+                                        <div data-value="100 ml" class="n-sd swatch-element 100-ml">
+                                            <input class="variant-0 input-product" id="swatch-0-100-ml" type="radio"
+                                                name="option1" value="100 ml">
+
+                                            <label for="swatch-0-100-ml">
+                                                100 ml
+                                                <img class="crossed-out"
+                                                    src="//theme.hstatic.net/200000170631/1000660112/14/soldout.png?v=3075">
+                                                <img class="img-check"
+                                                    src="//theme.hstatic.net/200000170631/1000660112/14/select-pro.png?v=3075">
+                                            </label>
+
+                                        </div>
+                                        <div data-value="5 lít" class="n-sd swatch-element 5-lit soldout">
+                                            <input class="variant-0 input-product" id="swatch-0-5-lit" type="radio"
+                                                name="option1" value="5 lít">
+
+                                            <label for="swatch-0-5-lit">
+                                                5 lít
+                                                <img class="crossed-out"
+                                                    src="//theme.hstatic.net/200000170631/1000660112/14/soldout.png?v=3075">
+                                                <img class="img-check"
+                                                    src="//theme.hstatic.net/200000170631/1000660112/14/select-pro.png?v=3075">
+                                            </label>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="grid mg-left-5">
+
+                            <!--======= Bán sỉ =========-->
+                            <div class="wrapper-bansi">
+                                <h3 id="list_title" style="display: none;"></h3>
+                                <ul id="list_bansi" style="display: none;">
+                                </ul>
+
+                            </div>
+
+
+                            <div class="grid__item large--one-whole medium--one-whole small--one-whole pd-left5">
+                                <div class="product-quantity clearfix">
+                                    <div class="qty-addcart clearfix">
+                                        <span>Số lượng </span>
+
+
+                                        <div class="js-qty">
+                                            <button type="button"
+                                                class="js-qty__adjust js-qty__adjust--minus icon-fallback-text"
+                                                data-id="" data-qty="0">
+                                                <span class="icon icon-minus" aria-hidden="true"></span>
+                                                <span class="fallback-text" aria-hidden="true">−</span>
+                                                <span class="visually-hidden">Giảm số lượng sản phẩm đi 1</span>
+                                            </button>
+                                            <input type="number" class="js-qty__num" value="1" min="1" data-id=""
+                                                aria-label="quantity" pattern="[0-9]*" name="quantity" id="Quantity">
+                                            <button type="button"
+                                                class="js-qty__adjust js-qty__adjust--plus icon-fallback-text"
+                                                data-id="" data-qty="11">
+                                                <span class="icon icon-plus" aria-hidden="true"></span>
+                                                <span class="fallback-text" aria-hidden="true">+</span>
+                                                <span class="visually-hidden">Tăng số lượng sản phẩm lên 1</span>
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__item large--four-whole medium--two-whole small--one-whole pd-left5">
+                                <div class="product-actions clearfix">
+                                    <button type="submit" name="add" id="AddToCart2" class="btnHome btnAddToCart">Thêm
+                                        vào giỏ
+                                        hàng</button>
+                                    <button type="button" name="buy" id="buy-now" class="btnHome btnBuyNow">Mua
+                                        ngay</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="selector-buyxgety">
+                        <div id="buyxgety-program" class="hidden">
+                            <div class="buyxgety-heading">
+                                <h3>Các sản phẩm được tặng kèm</h3>
+                                <p>Chọn 1 trong các loại quà tặng</p>
+                            </div>
+                            <div id="buyxgety-product-list" data-id="1027037651" data-title="Mật Trà Kombucha Thảo Mộc">
+                                <div class="buyxgety_content clearfix">
+                                    <div class="buyxgety_lists"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro_option_promotion">
+                        <h3 class="title">Mã giảm giá dành riêng cho bạn</h3>
+                        <div class="content">
+
+                        </div>
+                        <div class="item">
+                            <a class="xemthem" href="" style="display: none;">Xem thêm ưu đãi khác</a>
+                            <a class="rutgon" style="display:none" href="">Rút gọn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-group">
+                <div class="product-group-container" style="border: 1px solid #ccc;padding: 5px;">
+                    <div class="product-group-title">
+                        <label style="font-size: 22px; font-weight: bold;">Sản Phẩm Khuyến Mãi</label>
+                    </div>
+                    <div class="product-group-cotent">
+                        <div *ngFor="let image of imagesProductGroup" class="article-item-list">
+                            <div class="article-image">
+                                <a [routerLink]="['/chi-tiet-san-pham']"><img style="width: 100px;" [src]="image"></a>
+                            </div>
+                            <div class="article-info">
+                                <a class="article-title">
+                                    Gạo ST25 sát trắng
+                                </a>
+                                <div style="position: relative;">
+                                    <span>30,000₫</span>
+                                    <div class="product-tags">
+                                        <span class="tag-saleoff">
+                                            SALE 30%
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-description-wrapper">
+        <div>
+            <label>THÀNH PHẦN DINH DƯỠNG</label>
+        </div>
+        <div class="group">
+            <div class="content">
+                <div class="ToggleContent__Wrapper-sc-1dbmfaw-1 cqXrJr">
+                    <div class="ToggleContent__View-sc-1dbmfaw-0 wyACs">
+                        <p><span><strong style="color: rgb(17, 90, 226);">Quạt thông gió âm trần TFV-D15
+                                    ZPD:</strong>hút thông gió không gian tĩnh phòng
+                                khách, phòng ngủ, nhà bếp, phòng vệ sinh, nhà tắm, văn phòng, phòng hút thuốc... thông
+                                gió, hút bụi, hút nhiệt... đảm bảo không gian sạch sẽ, thông thoáng</span></p>
+                        <p><em>
+                                <picture class="webpimg-container">
+                                    <img src="https://file.hstatic.net/200000170631/article/logo_ngong__600_x_375__29344ad4b48045eea1b44ff92fc8af04_large.png"
+                                        alt="" class="WebpImg__StyledImg-sc-h3ozu8-0 fWjUGo">
+                                </picture><br>
+                            </em></p>
+                        <p *ngIf="isShow"><span><strong>Quạt thông gió âm trần TFV-D15 ZPD:</strong>hút thông gió không
+                                gian tĩnh phòng
+                                khách, phòng ngủ, nhà bếp, phòng vệ sinh, nhà tắm, văn phòng, phòng hút thuốc... thông
+                                gió, hút bụi, hút nhiệt... đảm bảo không gian sạch sẽ, thông thoáng</span></p>
+                        <div *ngIf="!isShow" class="gradient"></div>
+                    </div>
+                    <button class="btn-more" (click)="isShow = !isShow" data-view-id="pdp_view_description_button">
+                        {{!isShow ? 'Xem thêm mô tả' : 'Thu gọn mô tả'}}</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label>MÔ TẢ SẢN PHẨM</label>
+        </div>
+        <div class="group">
+            <div class="content">
+                <div class="ToggleContent__Wrapper-sc-1dbmfaw-1 cqXrJr">
+                    <div class="ToggleContent__View-sc-1dbmfaw-0 wyACs">
+                        <p><span><strong style="color: rgb(17, 90, 226);">Quạt thông gió âm trần TFV-D15
+                                    ZPD:</strong>hút thông gió không gian tĩnh phòng
+                                khách, phòng ngủ, nhà bếp, phòng vệ sinh, nhà tắm, văn phòng, phòng hút thuốc... thông
+                                gió, hút bụi, hút nhiệt... đảm bảo không gian sạch sẽ, thông thoáng</span></p>
+                        <p><em>
+                                <picture class="webpimg-container">
+                                    <img src="https://file.hstatic.net/200000170631/article/logo_ngong__600_x_375__29344ad4b48045eea1b44ff92fc8af04_large.png"
+                                        alt="" class="WebpImg__StyledImg-sc-h3ozu8-0 fWjUGo">
+                                </picture><br>
+                            </em></p>
+                        <p *ngIf="isShow"><span><strong>Quạt thông gió âm trần TFV-D15 ZPD:</strong>hút thông gió không
+                                gian tĩnh phòng
+                                khách, phòng ngủ, nhà bếp, phòng vệ sinh, nhà tắm, văn phòng, phòng hút thuốc... thông
+                                gió, hút bụi, hút nhiệt... đảm bảo không gian sạch sẽ, thông thoáng</span></p>
+                        <div *ngIf="!isShow" class="gradient"></div>
+                    </div>
+                    <button class="btn-more" (click)="isShow = !isShow" data-view-id="pdp_view_description_button">
+                        {{!isShow ? 'Xem thêm mô tả' : 'Thu gọn mô tả'}}</button>
+                </div>
+            </div>
+        </div>
+        <div class="startbap_product_reviews">
+            <div>
+                <label>ĐÁNH GIÁ SẢN PHẨM</label>
+            </div>
+            <div>
+                <div class="starbap-rev-widg__summary">
+                    <p class="starbap-rev-total-point">5.0 /5</p>
+                    <div class="starbap-rev-widg__summary-stars"><a class="starbap-star starbap--on"><i
+                                class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                            class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                style="color:#dfe519!important"></i></a><a class="starbap-star starbap--on"><i
+                                class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                            class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                style="color:#dfe519!important"></i></a><a class="starbap-star starbap--on"><i
+                                class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a></div>
+                    <div class="starbap-rev-widg__summary-text">Dựa trên 83 đánh giá</div>
+                    <div class="starbap-histogram starbap-temp-hidden">
+                        <div class="starbap-histogram__row" data-rating="5" data-frequency="83" data-percentage="100.0">
+                            <div class="starbap-histogram__star"><a class="starbap-star starbap--on"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a>
+                                <p-progressBar [value]="50" [showValue]="false"></p-progressBar>
+                            </div>
+                            <div class="starbap-histogram__bar">
+                                <div class="starbap-histogram__bar-content"
+                                    style="width: 100%; background: rgb(247, 216, 5);"></div>
+                            </div>
+                            <div class="starbap-histogram__percentage">100.0%</div>
+                            <div class="starbap-histogram__frequency">(83)</div>
+                        </div>
+                        <div class="starbap-histogram__row" data-rating="4" data-frequency="0" data-percentage="0.0">
+                            <div class="starbap-histogram__star"><a class="starbap-star starbap--on"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--on"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--off"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a>
+                            </div>
+                            <div class="starbap-histogram__bar">
+                                <div class="starbap-histogram__bar-content"
+                                    style="width: 0%; background: rgb(247, 216, 5);"></div>
+                            </div>
+                            <div class="starbap-histogram__percentage">0.0%</div>
+                            <div class="starbap-histogram__frequency">(0)</div>
+                        </div>
+                        <div class="starbap-histogram__row" data-rating="3" data-frequency="0" data-percentage="0.0">
+                            <div class="starbap-histogram__star"><a class="starbap-star starbap--on"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--on"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--off"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--off"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a>
+                            </div>
+                            <div class="starbap-histogram__bar">
+                                <div class="starbap-histogram__bar-content"
+                                    style="width: 0%; background: rgb(247, 216, 5);"></div>
+                            </div>
+                            <div class="starbap-histogram__percentage">0.0%</div>
+                            <div class="starbap-histogram__frequency">(0)</div>
+                        </div>
+                        <div class="starbap-histogram__row" data-rating="2" data-frequency="0" data-percentage="0.0">
+                            <div class="starbap-histogram__star"><a class="starbap-star starbap--on"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--on"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--off"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--off"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--off"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a>
+                            </div>
+                            <div class="starbap-histogram__bar">
+                                <div class="starbap-histogram__bar-content"
+                                    style="width: 0%; background: rgb(247, 216, 5);"></div>
+                            </div>
+                            <div class="starbap-histogram__percentage">0.0%</div>
+                            <div class="starbap-histogram__frequency">(0)</div>
+                        </div>
+                        <div class="starbap-histogram__row" data-rating="1" data-frequency="0" data-percentage="0.0">
+                            <div class="starbap-histogram__star"><a class="starbap-star starbap--on"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--off"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--off"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a><a
+                                    class="starbap-star starbap--off"><i class="fa fa-star fa-fw"
+                                        style="color:#dfe519!important"></i></a><a class="starbap-star starbap--off"><i
+                                        class="fa fa-star fa-fw" style="color:#dfe519!important"></i></a>
+                            </div>
+                            <div class="starbap-histogram__bar">
+                                <div class="starbap-histogram__bar-content"
+                                    style="width: 0%; background: rgb(247, 216, 5);"></div>
+                            </div>
+                            <div class="starbap-histogram__percentage">0.0%</div>
+                            <div class="starbap-histogram__frequency">(0)</div>
+                        </div>
+                        <div class="starbap-histogram__row starbap-histogram__clear-filter" data-rating="null"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div style="width: 100%;" class="related-products">
+        <div class="collection-head" style="width: 100%;">
+            <label class="lbl-h1 collection-title">SẢN PHẨM KHUYẾN MẠI</label>
+        </div>
+        <div style="width: 100%;" class="product-watch">
+            <div *ngFor="let item of imagesProductWatch" class="article-item article-item-list">
+                <div class="article-image">
+                    <a [routerLink]="['/chi-tiet-san-pham']"><img [src]="item"></a>
+                </div>
+                <div class="article-info">
+                    <a [routerLink]="['/chi-tiet-san-pham']" class="article-title">
+                        Mật Trà Kombucha Cốt
+                        Chuối
+                    </a>
+                    <div class="product-price clearfix"><span class="current-price">155,000₫</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;" class="seen-products">
+        <div class="collection-head" style="width: 100%;">
+            <label class="lbl-h1 collection-title">SẢN PHẨM ĐÃ XEM</label>
+        </div>
+        <div style="width: 100%;" class="product-watch">
+            <div *ngFor="let item of imagesProductWatch" class="article-item article-item-list">
+                <div class="article-image">
+                    <a [routerLink]="['/chi-tiet-san-pham']"><img [src]="item"></a>
+                </div>
+                <div class="article-info">
+                    <a [routerLink]="['/chi-tiet-san-pham']" class="article-title">
+                        Mật Trà Kombucha Cốt
+                        Chuối
+                    </a>
+                    <div class="product-price clearfix"><span class="current-price">155,000 ₫</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;">
+        <img style="width: 100%;" src="../../../../assets/image/main/ms_banner_img1.jpg">
+    </div>
+</div>

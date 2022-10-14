@@ -1,0 +1,40 @@
+<header>
+    <div class="header-top-desktop">
+        <label class="lbl-h2 lbl-header" style="color: #fff;">HOTLINE: 0945348008</label>
+        <div class="header-func">
+            <div class="searchBox" [hidden]="!searchBox">
+                <input class="searchInput" type="text" name="" placeholder="Search here...">
+                <button class="searchButton" (click)="searchBox = !searchBox" href="#">
+                    <i class="material-icons">
+                        search
+                    </i>
+                </button>
+            </div>
+            <img class="search" (click)="searchBox = !searchBox" src="../../../../assets/image/main/icon search.png" />
+            <a><img class="notification" src="../../../../assets/image/main/notification.png" /></a>
+            <a [routerLink]="['/mua-o-dau']" class="mua-o-dau-link">
+                <div><img class="mua-o-dau" src="../../../../assets/image/main/mua_o_dau.png" /></div>
+                <div>Mua Ở Đâu</div>
+            </a>
+            <div class="header-link">
+                <div><img class="tai-khoan" src="../../../../assets/image/main/tai-khoan.png" /></div>
+                <div>Tài Khoản</div>
+            </div>
+            <a><img src="../../../../assets/image/main/gio-hang.png" /></a>
+        </div>
+    </div>
+    <div #menu class="header-desktop" [class]="banner ? 'banner' : ''">
+        <div class="header-logo">
+            <a *ngIf="!isSlide"><img src="../../../../assets/image/main/logo.webp" /></a>
+            <a *ngIf="isSlide"><img src="../../../../assets/image/main/Logo-trang.png" /></a>
+        </div>
+        <app-headerMenu [slide]="isSlide" style="width: 100%;"></app-headerMenu>
+    </div>
+    <div class="header-top-mobile">
+        <label class="lbl-h2 lbl-header" style="color: #fff;">HOTLINE: 0945348008</label>
+    </div>
+    <div class="header-mobile">
+        <app-headerMenu style="width: 100%;"></app-headerMenu>
+        <a><img class="hd-logo-mobile" src="../../../../assets/image/main/logo.webp" /></a>
+    </div>
+</header>
