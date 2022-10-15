@@ -54,6 +54,13 @@ span{
             width: 100%;
             height: 100%;
 
+            .line{
+                border: 1px solid #87b83b;
+                width: 600px;
+                margin: 0 auto;
+                margin-bottom: 2px;
+            }
+
             .headline {
                 width: 100%;
                 text-align: center;
@@ -168,8 +175,8 @@ span{
     }
 
     #SECTION4 {
-        height: 1290px;
-        min-height: 1290px;
+        height: 1390px;
+        min-height: 1390px;
         margin-top: 90px;
         width: 100%;
 
@@ -177,12 +184,18 @@ span{
             width: 100%;
             height: 100%;
 
+            .line{
+                border: 1px solid #87b83b;
+                width: 600px;
+                margin: 0 auto;
+                margin-bottom: 2px;
+            }
+            
             .news-project {
                 top: 20px;
                 width: 100%;
                 text-align: center;
                 margin-top: 60px;
-                margin-bottom: 30px;
 
                 .ladi-headline {
                     color: #8B4513;
@@ -286,6 +299,10 @@ span{
                     text-align: center;
                     padding-top: 40px;
 
+                    .hide {
+                        display: none;
+                    }
+
                     a {
                         font-weight: bold;
                         padding-bottom: 30px;
@@ -318,21 +335,28 @@ span{
     }
 
     #SECTION5 {
-        margin-top: 70px;
-        height: 770px;
-        min-height: 770px;
+        margin-top: 50px;
+        height: 830px;
+        min-height: 830px;
         width: 100%;
 
         .ladi-container {
             width: 100%;
             height: 100%;
+            margin-top: 40px;
+
+            .line{
+                border: 1px solid #87b83b;
+                width: 680px;
+                margin: 0 auto;
+                margin-bottom: 2px;
+            }
 
             .news-project {
                 top: 20px;
                 width: 100%;
                 text-align: center;
                 margin-top: 60px;
-                margin-bottom: 50px;
 
                 .ladi-headline {
                     color: #8B4513;

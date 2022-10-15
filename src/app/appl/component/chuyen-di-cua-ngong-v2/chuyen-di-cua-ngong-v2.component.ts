@@ -1,6 +1,7 @@
 import { ViewportScroller } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+declare let $: any;
 
 @Component({
     selector: 'chuyen-di-cua-ngong-v2',
@@ -84,5 +85,34 @@ export class ChuyenDiCuaNgongV2Component implements OnInit{
 
     onScroll(){
         this.scroller.scrollToAnchor("SECTION6");
+    }
+
+    addNewElement(){
+        var cointainer = $('#btntest').closest('.add-dele');
+        var counts = cointainer.children('.gradient-border').length;
+        var content = $('#btntest').prev();
+
+        counts++;
+        if (counts > 4) {
+            $('#btntest').hide();
+        }
+
+        content.clone(true,true).insertAfter(content);
+        cointainer.find('.removeBtn').show();
+    }
+
+    deleteNewElement(){
+        var cointainer = $(this).closest('.add-dele');
+        var counts = cointainer.children('.gradient-border').length;
+
+        counts--;
+        if(counts < 4) {
+            cointainer.children('.addBtn').show();
+            if (counts == 1) {
+                cointainer.find('.removeBtn').hide();
+            }
+        }
+        
+        $(this).parent().remove();
     }
 }
