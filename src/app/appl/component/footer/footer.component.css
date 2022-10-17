@@ -22,7 +22,7 @@
 
 .ft-menu {
     margin-bottom: 45px;
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
 .ft-menu-nav {
@@ -52,7 +52,8 @@
 
 .footer-social-icon {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    margin-top: 30px;
 }
 
 .ft-box-right {
@@ -64,6 +65,10 @@
 .ft-center,
 .ft-right {
     width: 50%;
+}
+
+.text-near-logo {
+    margin-top: 20px;
 }
 
 @media (max-width: 991px) {

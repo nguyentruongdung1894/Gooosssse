@@ -13,7 +13,7 @@
     font-size: 18px;
 }
 
-.content {
+.produdction-system .content {
     display: flex;
 }
 
@@ -60,7 +60,7 @@
         padding: 1px;
     }
 
-    .content {
+    .produdction-system .content {
         display: block;
     }
 

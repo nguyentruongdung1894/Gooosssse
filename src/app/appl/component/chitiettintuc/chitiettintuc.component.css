@@ -27,10 +27,10 @@ a,
     font-weight: bold;
 }
 
-.grid,
-.grid--rev,
-.grid--full,
-.grid-uniform {
+.tin-tuc-content .grid,
+.tin-tuc-content .grid--rev,
+.tin-tuc-content.grid--full,
+.tin-tuc-content .grid-uniform {
     list-style: none;
     margin: 0;
     padding: 0;

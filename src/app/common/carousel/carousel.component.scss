@@ -66,15 +66,14 @@
 
                 .product-tags {
                     position: absolute;
-                    top: 5px;
-                    right: 5px;
+                    top: -30px;
+                    right: 90px;
                     z-index: 1;
-                    border: 2em solid red;
-                    border-top: 1.5em solid red;
-                    border-left: 1.5em solid red;
-                    border-right: 1.5em solid red;
-                    border-bottom: 1em solid red;
-                    border-bottom-color: transparent;
+
+                    .product-tags-img {
+                        height: 120px;
+                        position: absolute;
+                    }
 
                     span {
                         display: inline-block;
@@ -89,9 +88,9 @@
                     span.tag-saleoff {
                         position: absolute;
                         border-bottom-color: transparent;
-                        right: -22px;
-                        bottom: -10px;
+                        right: -78px;
                         font-size: 20px;
+                        top: 35px;
                     }
 
                     span.tag-new {
@@ -123,10 +122,17 @@
                     margin: 5px 0px 10px;
 
                     .current-price {
-                        color: #ff0000;
                         font-weight: bold;
-                        font-size: 18px;
+                        font-size: 19px;
                     }
+
+                    .current-price-original {
+                        font-size: 16px;
+                        color: #999;
+                        text-decoration: line-through;
+                        margin-left: 10px;
+                    }
+
                 }
 
                 .product-actions {
@@ -209,7 +215,7 @@
     .picsum-content {
 
         .picsum-img {
-            padding: 0 28px;
+            padding: 0 15px;
             text-align: left;
             font-size: 18px;
 
@@ -220,13 +226,19 @@
                 margin-bottom: 20px;
                 border: 1px solid #e5e5e5;
                 border-radius: 4px;
-                padding: 3px;
+                padding: 10px;
 
                 .article-info {
                     padding: 5px;
 
                     .article-desc {
+                        margin-top: 15px;
                         font-size: 16px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .article-info-relate {
@@ -275,6 +287,7 @@
                     .article-title {
                         color: #000;
                         font-weight: bold;
+                        margin-bottom: 15px;
                     }
 
                     .article-readmore {
@@ -372,17 +385,18 @@
 
     .betaviet-content {
         overflow-x: auto;
-        height: 560px;
+        height: 490px;
         margin-top: 30px;
         justify-content: center;
         display: flex;
         float: left;
         padding-top: 10px;
         width: 100%;
+        text-align: justify;
 
         div {
             .betaviet {
-                width: 250px;
+                width: 300px;
                 height: fit-content;
                 border: 1px solid #ccc;
                 box-shadow: 0px 2px 10px 0px rgb(145 147 150 / 75%);

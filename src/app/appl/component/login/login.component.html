@@ -1,0 +1,28 @@
+<div class="login">
+    <div class="title">
+        <label class="h1" *ngIf="!isLogin && !isRecover">Đăng Ký Tài Khoản</label>
+        <label class="h1" *ngIf="isLogin && !isRecover">Đăng nhập Tài Khoản</label>
+        <label class="h1" *ngIf="isRecover">Quên mật khẩu</label>
+    </div>
+    <div class="summit">
+        <input type="text" *ngIf="!isLogin && !isRecover" pInputText placeholder="Họ và tên *" />
+        <input type="text" *ngIf="isLogin && !isRecover" pInputText placeholder="Tên đăng nhập/Số điện thoại *" />
+        <input type="tel" *ngIf="!isLogin && !isRecover" pInputText placeholder="Số điện thoại *" />
+        <input type="email" *ngIf="!isLogin && !isRecover" pInputText placeholder="Email của bạn" />
+        <input type="text" *ngIf="!isLogin && !isRecover" pInputText placeholder="Địa chỉ..." />
+        <input type="password" *ngIf="!isRecover" pInputText placeholder="Mật khẩu *" />
+        <span *ngIf="isRecover" style="color: #87b83b; font-weight: bold; font-size: 28px;">Vui lòng liên hệ hotline:
+            0945348008 để được
+            hỗ trợ</span>
+        <button (click)="onRigister()" *ngIf="!isLogin && !isRecover">Đăng ký</button>
+        <button (click)="onLogin()" *ngIf="isLogin && !isRecover">Đăng nhập</button>
+        <a *ngIf="!isLogin && !isRecover" (click)="isLogin = true">Đăng nhập</a>
+        <div style="display: flex; justify-content: space-between;" *ngIf="isLogin && !isRecover">
+            <a (click)="isLogin = false">Đăng ký tài khoản mới</a>
+            <a (click)="isRecover = true; isLogin = false">Quên mật khẩu</a>
+        </div>
+        <div style="text-align: left; position: relative; bottom: -30px;">
+            <a *ngIf="isRecover" (click)="isLogin = true; isRecover = false">Quay lại</a>
+        </div>
+    </div>
+</div>

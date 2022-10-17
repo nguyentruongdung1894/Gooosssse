@@ -83,18 +83,22 @@ textarea:focus {
     content: url('../../../../assets/image/main/toppng.com-website-phone-email-icons-1574x1573.png');
     width: 25px;
     height: 25px;
+    float: left;
+    margin-right: 10px;
 }
 
 .email {
     content: url('../../../../assets/image/main/pngegg.png');
     width: 30px;
     height: 25px;
+    margin-right: 10px;
 }
 
 .vitri {
-    content: url('../../../../assets/image/main/map.png');
+    content: url('../../../../assets/image/main/mua_o_dau.png');
     margin-right: 10px;
     float: left;
+    height: 45px;
 }
 
 .required {

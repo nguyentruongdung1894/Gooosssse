@@ -1,31 +1,70 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { ProductDialogComponent } from '../productDialog/productDialog.component';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 @Component({
     selector: 'app-img-product',
     templateUrl: './img-product.component.html',
-    styleUrls: ['./img-product.component.scss']
+    styleUrls: ['./img-product.component.scss'],
+    providers: [DialogService, MessageService]
 })
 export class ImgProductComponent implements OnInit {
 
     animal: string = '';
     @Input() sale: string = '';
     @Input() imgSrc: string = '';
-    constructor(private dialog: MatDialog) { }
-
+    @Output() eventClick: EventEmitter<any> = new EventEmitter<any>();
+    constructor(private dialogService: DialogService) { }
+    ref!: DynamicDialogRef;
     ngOnInit() {
     }
 
     openDialog(): void {
-        const dialogRef = this.dialog.open(ProductDialogComponent, {
-            width: '250px',
-            data: { name: 'aaa', animal: 'nbbb' },
+        this.ref = this.dialogService.open(ProductDialogComponent, {
+            header: 'Lựa Chọn Thuộc Tính',
+            width: '70%',
+            contentStyle: { "max-height": "600px", "overflow": "auto" },
+            baseZIndex: 10000,
+            dismissableMask: true,
+            data: {
+                id: 'new8938521954248',
+                title: 'Mật Trà Kombucha Thảo Mộc',
+                image: '',
+                price: '210000',
+                variant: '500ml',
+                totalPrice: 210000,
+                quantity: 1
+            }
         });
+    }
 
-        dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
-            this.animal = result;
-        });
+    addCart(event: any) {
+        let product: any[] = [];
+        let insertFlag = false;
+        product = JSON.parse(sessionStorage.getItem("productList") as any);
+        if (product && product.length) {
+            product.forEach(element => {
+                if (element.id === 'new8938521954248') {
+                    insertFlag = true;
+                    element.quantity = +(element.quantity) + 1;
+                    element.totalPrice = 210000 * element.quantity;
+                }
+            });
+        }
+        if (!insertFlag || (product && !product.length)) {
+            product = [];
+            product.push({
+                id: 'new8938521954248',
+                title: 'Mật Trà Kombucha Thảo Mộc',
+                image: '',
+                price: '210000',
+                variant: '500ml',
+                totalPrice: 210000 * 1,
+                quantity: 1
+            });
+        }
+        sessionStorage.setItem('productList', JSON.stringify(product));
+        this.eventClick.emit();
     }
 
 }

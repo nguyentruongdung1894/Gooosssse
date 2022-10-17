@@ -1,4 +1,4 @@
-<app-header3></app-header3>
+<app-header></app-header>
 <div class="container">
     <div class="breadcrumb-small">
         <a [routerLink]="['/introduce']" title="Quay trở về trang chủ">Trang chủ</a>
@@ -25,13 +25,15 @@
             </div>
             <div>
                 <div class="div-phone">
-                    <div class="phone"></div>
-                    <label>Số điện thoại</label>
+                    <a href="tel:0945348008">
+                        <div class="phone"></div>
+                        <span style="color: #000;">094538008</span>
+                    </a>
                 </div>
-                <label class="lbl-h1" style="color: #000;">094538008</label>
+
                 <div class="div-email">
                     <div class="email"></div>
-                    <label>Email</label>
+                    <label>info@ngong.vn</label>
                 </div>
             </div>
         </div>
@@ -39,23 +41,21 @@
             Nếu bạn có bất kỳ câu hỏi, yêu cầu cần hỗ trợ nào hãy gửi thông tin cho
             <b>Ngỗng</b> theo mẫu bên dưới nhé!
             <div class="h-box">
-                <input type="text" placeholder="Họ và tên" />
-                <div class="required">*</div>
+                <input type="text" placeholder="Họ và tên *" />
             </div>
             <div class="h-box">
-                <input type="text" placeholder="Email" />
-                <div class="required">*</div>
+                <input type="email" placeholder="Email *" />
             </div>
             <div class="h-box">
-                <input type="text" placeholder="Số điện thoại" />
-                <div class="required">*</div>
+                <input type="tel" placeholder="Số điện thoại *" />
             </div>
             <div class="h-box">
                 <textarea placeholder="Nội dung"></textarea>
             </div>
-            <div style="display: flex;">
+            <div style="display: flex; justify-content: end;">
                 <button>Gửi</button>
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

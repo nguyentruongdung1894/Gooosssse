@@ -6,10 +6,11 @@
         <div *ngIf="product" class="product-content">
             <div class="product-item">
                 <div class="product-img">
-                    <a href="">
-                        <img id="1026970643" class="lazyload" [src]="data.image" alt="Bột Sắn Dây Ông Hòa 700gr">
+                    <a [routerLink]="['/chi-tiet-san-pham']">
+                        <img id="1026970643" class="lazyload" [src]="data.image">
                     </a>
                     <div *ngIf="data.sale" class="product-tags">
+                        <img class="product-tags-img" src="../../../assets/image/main/km.png">
                         <span class="tag-saleoff">
                             {{data.sale}}%
                         </span>
@@ -17,15 +18,17 @@
                 </div>
                 <div class="product-info">
                     <div class="product-title">
-                        <a href="">{{data.title}}</a>
+                        <a [routerLink]="['/chi-tiet-san-pham']">{{data.title}}</a>
                     </div>
                     <div class="product-price clearfix">
                         <span class="current-price">{{data.money}} ₫</span>
+                        <span class="current-price-original" *ngIf="data.moneyoriginal">{{data.moneyoriginal}}</span>
                     </div>
                     <div class="product-actions">
                         <div>
-                            <button class="btn-add">Thêm vào giỏ hàng</button>
-                            <button class="btn-buy">Mua Ngay</button>
+                            <button *ngIf="showButton" class="btn-add" (click)="addCart($event)">Thêm vào giỏ
+                                hàng</button>
+                            <button *ngIf="showButton" class="btn-buy" (click)="openDialog()">Mua Ngay</button>
                         </div>
                     </div>
                 </div>

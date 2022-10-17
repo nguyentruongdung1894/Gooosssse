@@ -5,7 +5,7 @@
                 <a [routerLink]="['/']">trang chủ</a>
             </li>
             <li class="dropdown">
-                <span>về ngỗng</span>
+                <span>về ngỗng<i class="fa fa-angle-down" aria-hidden="true"></i></span>
                 <ul class="no-bullets dropdown-menu">
                     <li>
                         <a [routerLink]="['/introduce']">sơ lược về ngỗng</a>
@@ -33,13 +33,13 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a [routerLink]="['/trang-chu-du-an']">dự án<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a [routerLink]="['/danh-muc-du-an']">dự án<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="no-bullets dropdown-menu">
                     <li>
-                        <a href="/collections/gao-ngong">chuyến đi của ngỗng</a>
+                        <a [routerLink]="['/chuyen-di-cua-ngong']">chuyến đi của ngỗng</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/du-an-khac']">dự án khác</a>
+                        <a href="/du-an-khac">dự án khác</a>
                     </li>
                 </ul>
             </li>
@@ -62,19 +62,16 @@
                 </ul>
             </li>
             <li class=" dropdown">
-                <a [routerLink]="['/chi-tiet-tuyen-dung']">hợp tác<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a>hợp tác<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="no-bullets dropdown-menu">
                     <li>
                         <a [routerLink]="['/chinh-sach-dai-ly-ctv']">chính sách đại lý CTV - new</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/he-thong-doi-tac-new']">hệ thống đối tác</a>
+                        <a [routerLink]="['/he-thong-doi-tac']">hệ thống đối tác</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/chi-tiet-tuyen-dung']">Chi tiết tuyển dụng</a>
-                    </li>
-                    <li>
-                        <a [routerLink]="['/tuyen-dung-new']">tuyển dụng new</a>
+                        <a [routerLink]="['/tuyen-dung']">tuyển dụng new</a>
                     </li>
                 </ul>
             </li>
@@ -84,20 +81,17 @@
         </ul>
     </div>
     <div *ngIf="slide" class="header-func">
-        <div class="searchBox" [hidden]="!searchBox">
+        <div class="searchBox">
             <input class="searchInput" type="text" name="" placeholder="Search here...">
-            <button class="searchButton" (click)="searchBox = !searchBox" href="#">
+            <button class="searchButton" href="#">
                 <i class="material-icons">
                     search
                 </i>
             </button>
         </div>
-        <img (click)="searchBox = !searchBox" src="../../../../assets/image/main/icon search.png" />
-        <div class="header-link">
-            <div><img class="tai-khoan" src="../../../../assets/image/main/tai-khoan.png" /></div>
-            <div>Tài Khoản</div>
-        </div>
-        <a><img src="../../../../assets/image/main/gio-hang.png" /></a>
+        <img src="../../../../assets/image/main/icon search.png" />
+        <a (click)="onAccountClick($event)"><img src="../../../../assets/image/main/tai-khoan.png" /></a>
+        <a (click)="onCartClick($event)"><img src="../../../../assets/image/main/gio-hang.png" /></a>
     </div>
 </div>
 
@@ -128,10 +122,10 @@
                 </ul>
             </li>
             <li>
-                <a [routerLink]="['/']">Dự Án</a>
+                <a [routerLink]="['/danh-muc-du-an']">Dự Án</a>
                 <ul>
-                    <li><a [routerLink]="['/introduce']">Chuyến đi của Ngỗng</a></li>
-                    <li><a [routerLink]="['/news']">Dự án khác</a></li>
+                    <li><a [routerLink]="['/chuyen-di-cua-ngong']">Chuyến đi của Ngỗng</a></li>
+                    <li><a [routerLink]="['/du-an-khac']">Dự án khác</a></li>
                 </ul>
             </li>
             <li>
@@ -140,9 +134,9 @@
             <li>
                 <span>Hợp Tác</span>
                 <ul>
-                    <li><a [routerLink]="['/introduce']">Chính sách đại lý ctv-new</a></li>
-                    <li><a [routerLink]="['/news']">Hệ thống đối tác</a></li>
-                    <li><a [routerLink]="['/production-system']">Tuyển dụng new</a></li>
+                    <li><a [routerLink]="['/chinh-sach-dai-ly-ctv']">Chính sách đại lý ctv-new</a></li>
+                    <li><a [routerLink]="['/he-thong-doi-tac']">Hệ thống đối tác</a></li>
+                    <li><a [routerLink]="['/tuyen-dung']">Tuyển dụng new</a></li>
                 </ul>
             </li>
             <li>
@@ -153,7 +147,8 @@
     <div class="header-func">
         <div class="header-mobile-search"><input type="search" placeholder="Bạn đang tìm kiếm gì?"
                 style="width: 95%;border: 1px solid #ccc;border-radius: 5px;"></div>
-        <img class="header-link" class="tai-khoan" src="../../../../assets/image/main/tai-khoan.png" />
-        <a><img src="../../../../assets/image/main/gio-hang.png" /></a>
+        <img class="header-link" class="tai-khoan" src="../../../../assets/image/main/tai-khoan.png"
+            (click)="onAccountClick($event)" />
+        <a (click)="visibleSidebar2 = true"><img src="../../../../assets/image/main/gio-hang.png" /></a>
     </div>
 </div>

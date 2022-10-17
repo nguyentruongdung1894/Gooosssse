@@ -1,4 +1,4 @@
-<app-header3></app-header3>
+<app-header></app-header>
 <div class="container">
     <div class="breadcrumb-small">
         <a [routerLink]="['/introduce']" title="Quay trở về trang chủ">Trang chủ</a>
@@ -46,25 +46,19 @@
     <label class="lbl-h1">Hệ Thống Đại Lý, CTV Của Ngỗng</label>
     <div class="address-content">
         <div class="address-map">
-            <select name="change-tinh" class="change-tinh">
+            <select #tinh name="change-tinh" class="change-tinh" (change)="tinhChange($event)">
                 <option value="tat-ca-tinh-thanh">Tất cả tỉnh/thành</option>
                 <option value="ha-noi">Hà Nội</option>
-                <option value="vinh-phuc">Vĩnh Phúc</option>
-                <option value="da-nang">Đà Nẵng</option>
                 <option value="tp-ho-chi-minh">TP Hồ Chí Minh</option>
-                <option value="05c69cc8-87d0-4758-846a-4b9b71902811">Lào Cai</option>
-                <option value="all" class="hide">Tất cả</option>
             </select>
-            <select name="change-quan" class="change-quan">
-                <option data-tinh="tat-ca-tinh-thanh" value="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
-                    style="display: block;">Đại lý</option>
-                <option data-tinh="tat-ca-tinh-thanh" value="518f1a55-08e6-4b15-89b5-25ed3837b613"
-                    style="display: block;">Công tác viên</option>
+            <select #quan name="change-quan" class="change-quan" (change)="quanChange($event)">
+                <option data-tinh="tat-ca-tinh-thanh">Đại lý</option>
+                <option data-tinh="tat-ca-tinh-thanh">Cộng tác viên</option>
             </select>
             <div class="address-cont">
                 <div class="address-detail">
                     <ul>
-                        <li data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
+                        <li *ngIf="isSg" data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
                             style="display: list-item;">
                             <div>
                                 <a (click)="onChangeFoodmap()">
@@ -99,7 +93,7 @@
                   letter-spacing: 1.5px;
                 ">CHỈ ĐƯỜNG <i class="fa fa-angle-right"></i></a>
                         </li>
-                        <li data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
+                        <li *ngIf="isHn" data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
                             style="display: list-item;">
                             <div>
                                 <a (click)="onChangeHomefood()">
@@ -132,7 +126,7 @@
                   letter-spacing: 1.5px;
                 ">CHỈ ĐƯỜNG <i class="fa fa-angle-right"></i></a>
                         </li>
-                        <li data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
+                        <li *ngIf="isHn" data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
                             style="display: list-item;">
                             <div>
                                 <a (click)="onChangeSaphang()">
@@ -168,7 +162,7 @@
                   letter-spacing: 1.5px;
                 ">CHỈ ĐƯỜNG <i class="fa fa-angle-right"></i></a>
                         </li>
-                        <li data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
+                        <li *ngIf="isHn" data-tinh="tat-ca-tinh-thanh" data-quan="8b4b5a30-73fb-4d50-8ba1-b20439355ed0"
                             style="display: list-item;">
 
                             <div>
@@ -237,3 +231,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

@@ -1,10 +1,17 @@
 .chi-tiet-san-pham {
+
+    .p-galleria-thumbnail-container {
+        background: transparent !important;
+    }
+
+    padding-bottom: 50px;
+
     .header-chi-tiet {
         height: 80px;
         width: 100%;
         display: flex;
         align-items: center;
-        border: 1px solid;
+        border: 1px solid #ccc;
 
         div {
             width: 100%;
@@ -27,6 +34,160 @@
 
             .product-content {
                 float: left;
+                width: 57%;
+                font-size: 18px;
+
+                .pro-content-head {
+                    width: 100%;
+                    border-bottom: 1px solid #ccc;
+
+                    .review-sold {
+                        .starbaprv-widget {
+                            display: flex;
+
+                            span.origin,
+                            span.status {
+                                margin-right: 10px;
+                                border-right: 2px solid #ccc;
+                                padding-right: 10px;
+                            }
+
+                            span.origin {
+                                color: #c2650f;
+                                ;
+                            }
+
+                            span.status {
+                                color: #87b83b
+                            }
+                        }
+                    }
+                }
+
+                .pro-price {
+                    margin: 30px 0;
+
+                    .product-price {
+                        color: red;
+                        font-weight: bold;
+                    }
+
+                    .product-orifinnal {
+                        color: #ccc;
+                        text-decoration: line-through;
+                    }
+
+                    .product-sale {
+                        color: red;
+                    }
+                }
+
+                .quantity {
+                    margin-bottom: 30px;
+                }
+
+                .product-variants-wrapper {
+                    margin-bottom: 30px;
+
+                    #product-select-watch {
+                        #variant-swatch {
+                            display: flex;
+                            align-items: center;
+
+                            .header {
+                                margin-right: 50px;
+                            }
+
+                            .select-swap {
+                                display: flex;
+
+                                .swatch-element {
+                                    margin-right: 10px;
+
+                                    .input-product {
+                                        display: none !important;
+                                    }
+
+                                    label {
+                                        float: left;
+                                        min-width: 35px !important;
+                                        height: 35px !important;
+                                        margin: 0;
+                                        text-align: center;
+                                        line-height: 35px;
+                                        white-space: nowrap;
+                                        border: 1px solid #ccc;
+                                        cursor: pointer;
+                                        position: relative;
+
+                                        .img-check {
+                                            position: absolute;
+                                            right: 0;
+                                            bottom: 0;
+                                        }
+                                    }
+
+                                    .sp {
+                                        border-color: red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .product-actions {
+                    margin-bottom: 20px;
+                    margin-top: 40px;
+
+                    .btnBuyNow {
+                        margin-right: 10px;
+                        color: #fff;
+                        background-color: #c2650f;
+                        border-radius: 5px;
+                        border-color: transparent;
+                        font-size: 16px;
+                    }
+
+                    .btnAddToCart {
+                        margin-right: 10px;
+                        color: #c2650f;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        border-color: #c2650f;
+                        font-size: 16px;
+
+                        img {
+                            height: 26px;
+                            position: relative;
+                            top: -2px;
+                        }
+                    }
+
+                    .btnCall {
+                        color: #fff;
+                        background-color: #06700e;
+                        border-radius: 5px;
+                        border-color: transparent;
+                        padding: 7px;
+                        font-size: 16px;
+
+                        img {
+                            height: 25px;
+                            position: relative;
+                            top: -1px;
+                            left: -3px;
+                        }
+                    }
+                }
+
+                .selector-buyxgety {
+                    border-top: 1px solid #ccc;
+
+                    .call {
+                        color: #c2650f;
+                    }
+                }
             }
         }
 
@@ -44,6 +205,11 @@
                 }
 
                 .product-group-cotent {
+                    overflow: auto;
+                    height: 425px;
+                    padding-right: 5px;
+                    padding-top: 10px;
+
                     .article-item-list {
                         margin: 0;
                         border-bottom: 1px solid #ebebeb;
@@ -70,7 +236,7 @@
                                 color: #333333;
                                 font-weight: bold;
                                 display: block;
-                                min-height: 70px;
+                                min-height: 65px;
                             }
 
                             div {
@@ -109,11 +275,96 @@
                     }
                 }
             }
+
+            .product-fix.scroll-product {
+                position: fixed;
+                top: 100px;
+                margin-top: 0;
+            }
+
+            .product-fix {
+                position: absolute;
+                z-index: 3;
+                width: 450px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                padding: 10px;
+                background: #fff;
+                margin-top: 45px;
+                right: 266px;
+
+                .product-fix-reviews {
+                    font-size: 16px !important;
+
+                    .starbap-rev-total {
+                        width: 100%;
+                        display: flex;
+                        border-bottom: 1px solid #ccc;
+                    }
+
+                    .pro-price {
+                        display: flex;
+
+                        .ProductPrice {
+                            color: red;
+                            font-weight: bold;
+                        }
+
+                        .original-price {
+                            color: #ccc;
+                            text-decoration: line-through;
+                        }
+
+                        .sale-percentage {
+                            color: red;
+                        }
+                    }
+
+                    .product-quantity {
+                        .qty-addcart {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+
+                    .product-fix-button {
+
+                        .btnBuyNow {
+                            margin: 10px 0;
+                            color: #fff;
+                            background-color: #c2650f;
+                            border-radius: 5px;
+                            border-color: transparent;
+                            width: 100%;
+                        }
+
+                        .btnAddToCart {
+                            color: #c2650f;
+                            background-color: #fff;
+                            border-radius: 5px;
+                            border-color: #c2650f;
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+
+                        .btnCall {
+                            color: #fff;
+                            background-color: #06700e;
+                            border-radius: 5px;
+                            border-color: transparent;
+                            width: 100%;
+                            margin-bottom: 10px;
+                            padding: 6px 85px;
+                        }
+                    }
+
+                }
+            }
         }
     }
 
     .product-description-wrapper {
-        width: 70%;
+        width: 65%;
 
         .group {
             margin-bottom: 16px;
@@ -189,6 +440,8 @@
         }
 
         .product-watch {
+            margin-bottom: 15px;
+
             .article-item-list {
                 width: 100%;
                 float: left;
@@ -244,4 +497,31 @@
             }
         }
     }
+
+    .startbap_product_reviews {
+        .startbap_product_content {
+            .starbap-rev-widg__summary {
+                .starbap-rev-total {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .starbap-histogram {
+                .starbap-histogram__row {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+.btn-input-number {
+    background-color: rgb(216, 98, 52) !important;
+    border-color: rgb(216, 98, 52) !important;
+}
+
+.p-inputnumber-input {
+    text-align: center;
 }

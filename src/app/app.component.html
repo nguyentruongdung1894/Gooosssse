@@ -1,7 +1,11 @@
 <router-outlet></router-outlet>
-<app-footer></app-footer>
 <div class="addThis_listSharing hidden-xs">
     <ul class="addThis_listing">
+        <li *ngIf="isHiden">
+            <div id="back-to-top" (click)="backTopClick()" class="medium--hide small--hide" style="display: block;">
+                <a class="back-top-new" href="javascript:void(0)"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+            </div>
+        </li>
         <li class="addThis_item">
             <a class="addThis_item--icon" href="tel:0945348008" rel="nofollow">
                 <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">

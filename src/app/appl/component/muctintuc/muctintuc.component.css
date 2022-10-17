@@ -88,6 +88,14 @@ a,
     width: 100%;
     display: flex;
     justify-content: center;
+    color: #87b83b;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.paging span:hover {
+    color: #15c5e4;
 }
 
 *,

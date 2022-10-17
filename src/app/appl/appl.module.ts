@@ -1,6 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -18,7 +17,7 @@ import { LienheComponent } from './component/lienhe/lienhe.component';
 import { TintucComponent } from './component/tintuc/tintuc.component';
 import { MuctintucComponent } from './component/muctintuc/muctintuc.component';
 import { ChitiettintucComponent } from './component/chitiettintuc/chitiettintuc.component';
-import { Header3Component } from '../common/header3/header3.component';
+import { HeaderComponent } from '../common/header/header.component';
 import { HeaderMenuComponent } from '../common/headerMenu/headerMenu.component';
 import { DanhmucsanphamComponent } from './component/danhmucsanpham/danhmucsanpham.component';
 import { ProductDialogComponent } from '../common/productDialog/productDialog.component';
@@ -27,14 +26,30 @@ import { ChitietsanphamComponent } from './component/chitietsanpham/chitietsanph
 import { GalleriaModule } from 'primeng/galleria';
 import { FormsModule } from '@angular/forms';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { GiohangComponent } from './component/giohang/giohang.component';
+import { SidebarModule } from 'primeng/sidebar';
+import { CheckboxModule } from 'primeng/checkbox';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { ThanhtoanComponent } from './component/thanhtoan/thanhtoan.component';
+import { DropdownModule } from 'primeng/dropdown';
 import { TrangChuDuAnComponent } from './component/trang-chu-du-an/trang-chu-du-an.component';
-import { ChuyenDiCuaNgongV2Component } from './component/chuyen-di-cua-ngong-v2/chuyen-di-cua-ngong-v2.component';
-import { ChiTietTuyenDungComponent } from './component/chi-tiet-tuyen-dung/chi-tiet-tuyen-dung.component';
+import { HttpClientModule } from '@angular/common/http';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { LoginComponent } from './component/login/login.component';
+import { AccountComponent } from './component/account/account.component';
+import { ChuyenDiCuaNgongComponent } from './component/chuyen-di-cua-ngong/chuyen-di-cua-ngong.component';
+import { AccordionModule } from 'primeng/accordion';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { TabViewModule } from 'primeng/tabview';
+import { DathangComponent } from './component/dathang/dathang.component';
 import { ChinhSachDaiLyCtvComponent } from './component/chinh-sach-dai-ly-ctv/chinh-sach-dai-ly-ctv.component';
-import {DuAnKhacComponent} from './component/du-an-khac/du-an-khac.component';
-import {HeThongDoiTacNewComponent} from './component/he-thong-doi-tac-new/he-thong-doi-tac-new.component';
-import {TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.component';
-
+import { DuAnKhacComponent } from './component/du-an-khac/du-an-khac.component';
+import { TuyenDungNewComponent } from './component/tuyen-dung-new/tuyen-dung-new.component';
+import { HeThongDoiTacNewComponent } from './component/he-thong-doi-tac-new/he-thong-doi-tac-new.component';
+import { ChiTietTuyenDungComponent } from './component/chi-tiet-tuyen-dung/chi-tiet-tuyen-dung.component';
+import { CommentDialogComponent } from '../common/commentDialog/commentDialog.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -46,11 +61,21 @@ import {TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.c
         RouterModule,
         MatDialogModule,
         GalleriaModule,
-        ProgressBarModule
+        ProgressBarModule,
+        SidebarModule,
+        CheckboxModule,
+        InputNumberModule,
+        InputTextModule,
+        ButtonModule,
+        DropdownModule,
+        HttpClientModule,
+        OverlayPanelModule,
+        AccordionModule,
+        PanelMenuModule,
+        TabViewModule,
     ],
     declarations: [
         MenuComponent,
-        HeaderComponent,
         FooterComponent,
         ImgProductComponent,
         IntroduceComponent,
@@ -62,25 +87,30 @@ import {TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.c
         TintucComponent,
         MuctintucComponent,
         ChitiettintucComponent,
-        Header3Component,
+        HeaderComponent,
         HeaderMenuComponent,
         DanhmucsanphamComponent,
         ProductDialogComponent,
         ChitietsanphamComponent,
+        GiohangComponent,
+        ThanhtoanComponent,
         TrangChuDuAnComponent,
-        ChuyenDiCuaNgongV2Component,
-        ChiTietTuyenDungComponent,
+        LoginComponent,
+        AccountComponent,
+        ChuyenDiCuaNgongComponent,
+        DathangComponent,
         ChinhSachDaiLyCtvComponent,
         DuAnKhacComponent,
+        TuyenDungNewComponent,
         HeThongDoiTacNewComponent,
-        TuyenDungNewComponent
+        ChiTietTuyenDungComponent,
+        CommentDialogComponent
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
     ],
     exports: [
         MenuComponent,
-        HeaderComponent,
         FooterComponent,
         ImgProductComponent,
         IntroduceComponent,
@@ -92,14 +122,22 @@ import {TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.c
         TintucComponent,
         MuctintucComponent,
         ChitiettintucComponent,
-        Header3Component,
+        HeaderComponent,
         HeaderMenuComponent,
         DanhmucsanphamComponent,
         ChitietsanphamComponent,
+        GiohangComponent,
+        ThanhtoanComponent,
         TrangChuDuAnComponent,
-        ChuyenDiCuaNgongV2Component,
+        LoginComponent,
+        AccountComponent,
+        ChuyenDiCuaNgongComponent,
+        DathangComponent,
+        DuAnKhacComponent,
+        TuyenDungNewComponent,
+        HeThongDoiTacNewComponent,
         ChiTietTuyenDungComponent,
-        ChinhSachDaiLyCtvComponent
+        CommentDialogComponent
     ]
 })
 export class ApplModule { }

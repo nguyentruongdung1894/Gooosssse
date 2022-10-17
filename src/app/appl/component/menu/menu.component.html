@@ -1,4 +1,4 @@
-<app-header3 [banner]="true"></app-header3>
+<app-header #header [banner]="true"></app-header>
 <div class="home-slide">
     <ngb-carousel *ngIf="imagesHome">
         <ng-template ngbSlide interval="1000" *ngFor="let image of imagesHome">
@@ -13,43 +13,44 @@
     <div class="line"></div>
     <div class="line"></div>
     <div class="sale" style="width: 100%;">
-        <app-carousel [datas]="datasSale" [product]="true" [responsiveOptions]="responsiveOptions"></app-carousel>
+        <app-carousel [datas]="datasSale" (eventClick)="header.visibleSidebar = true" [product]="true"
+            [responsiveOptions]="responsiveOptions"></app-carousel>
     </div>
     <label class="lbl-title">Sản Phẩm</label>
     <div class="line"></div>
     <div class="line"></div>
     <div *ngIf="isMobile">
         <div class="products">
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
         </div>
         <div class="products">
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
         </div>
         <div class="products">
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
         </div>
         <div class="products">
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
         </div>
         <div class="products">
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
         </div>
     </div>
     <div *ngIf="!isMobile">
         <div class="products">
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
-            <app-img-product [imgSrc]="image"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
+            <app-img-product [imgSrc]="image" (eventClick)="addCart()"></app-img-product>
         </div>
     </div>
     <div class="image">
@@ -94,13 +95,13 @@
         </div>
     </div>
     <div class="image so-gao-desktop"
-        style="margin-top: 30px;margin-bottom: 30px;justify-content: center;height: 500px;">
+        style="margin-top: 30px;margin-bottom: -100px;justify-content: center;height: auto;">
         <div style="position: relative; z-index: 2; left: 15px; top: -30px;"><img
                 src="../../../../assets/image/main/so-gao_compressed.jpg" alt=""
                 style="width: 255px;transform: rotate(355deg);"></div>
-        <div style="width: 62%;">
-            <div>
-                <div style="display: flex; justify-content: space-around; margin-bottom: 10px;">
+        <div style="width: 62%;position: relative;">
+            <div style="position: relative; ">
+                <div style="display: flex; justify-content: space-around; margin-bottom: 25px;">
                     <div style="font-weight: bold; text-align: center;"><img
                             src="../../../../assets/image/main/money.png" alt="" style="width: 80px;"><br> Ưu Đãi<br>22%
                         - 35% </div>
@@ -114,7 +115,7 @@
                 <div class="dat-hang-so-gao">
                     <div style="display: flex; margin: 15px 0px; width: 90%; margin-left: 30px;">
                         <div
-                            style="align-items: center; display: flex; flex-direction: column; justify-content: center; font-weight: bold; width: 40%; font-size: 20px; margin-right: 6px;">
+                            style="align-items: center; display: flex; flex-direction: column; justify-content: center; font-weight: bold; width: 40%; font-size: 22px; margin-right: 6px;">
                             Sổ Gạo <div class="line" style="width: 100px;"></div>
                             <div class="line" style="width: 100px;"></div>
                         </div>
@@ -122,7 +123,9 @@
                                 style="background: linear-gradient(to bottom, red 0, #b32323 100%); width: 200px; border: 2px solid #fff; border-radius: 30px; font-weight: bold; align-items: center; height: 40px; color: #fff; box-shadow: 0px 2px 10px 0px rgb(145 147 150 / 75%);">ĐẶT
                                 NGAY</button></div>
                     </div>
-                    <div style="font-size: 20px; padding-left: 60px; text-align: left; padding-right: 15px;"> Sổ gạo là
+                    <div
+                        style="font-size: 20px; padding-left: 60px; text-align: left; padding-right: 15px; word-break: break-word;">
+                        Sổ gạo là
                         hình thức "Mua trước trả sau" nằm trong dự án "Cánh Đồng Sẻ Chia" do NGỗng triển khai nhằm mang
                         lại
                         lợi ích cân bằng cho cả khác hàng và người nông dân.<br>
@@ -133,7 +136,7 @@
         position: relative; 
         transform: rotate(18deg);
         width: fit-content;
-        bottom: 151px;
+        bottom: 155px;
         left: 79%;
     "><img src="../../../../assets/image/main/anh bong gao - duoi jpg.png" alt="" style="width: 200px;"></div>
             </div>
@@ -215,7 +218,7 @@
                         <div class="txt-news">
                             <div style="font-size: 20px;"><a [routerLink]="['/chi-tiet-tin-tuc']">Thành phần dinh dưỡng
                                     của gạo có gì? Nên ưu tiên sử
-                                    dụng</a></div><br>
+                                    dụng</a></div>
                             <span>Bột sữa hạt Vui Khỏe Đẹp làm ra từ các loại đậu hạt ưu tiên tuyển chọn từ những vùng
                                 nguyên</span>
                         </div>
@@ -227,7 +230,7 @@
                         <div class="txt-news">
                             <div style="font-size: 20px;"><a [routerLink]="['/chi-tiet-tin-tuc']">Thành phần dinh dưỡng
                                     của gạo có gì? Nên ưu tiên sử
-                                    dụng</a></div><br>
+                                    dụng</a></div>
                             <span>Bột sữa hạt Vui Khỏe Đẹp làm ra từ các loại đậu hạt ưu tiên tuyển chọn từ những vùng
                                 nguyên</span>
                         </div>
@@ -258,3 +261,4 @@
         </app-carousel>
     </div>
 </div>
+<app-footer></app-footer>

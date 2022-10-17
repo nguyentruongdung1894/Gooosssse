@@ -1,14 +1,14 @@
-<app-header3></app-header3>
+<app-header></app-header>
 <div class="container chitiettintuc">
     <div class="breadcrumb-small">
-        <div>
-            <label class="lbl-h1">Chia sẻ công nghiệp</label>
-        </div>
         <a [routerLink]="['/']" title="Quay trở về trang chủ">Trang chủ</a>
         <span aria-hidden="true">/</span>
         <span>Tin tức</span>
         <span aria-hidden="true">/</span>
         <span>Chia sẻ kinh nghiêm</span>
+        <div>
+            <label class="lbl-h1">Chia sẻ công nghiệp</label>
+        </div>
     </div>
 
     <div>
@@ -17,6 +17,7 @@
                 <header class="blog_entry-header clearfix">
                     <div class="blog_entry-header-inner">
                         <label class="lbl-h1">7 món giàu protein bậc nhất, ăn đến đâu giảm mỡ tăng cơ đến đó</label>
+                        <header class="entry-meta"><time class="entry-date">29/06/2022</time></header>
                         <div style="
                             display: flex;
                             margin-top: 20px; margin-bottom: 5px;">
@@ -211,12 +212,10 @@
                                         Nam</strong></em></span></p>
                     </div>
                 </div>
-                <footer class="entry-meta"><time class="entry-date">29/06/2022</time></footer>
             </article>
             <div style="display: flex; justify-content: flex-end;">
-                <div class="fb-like"
-                    data-href="https://ngong.vn/blogs/chuyen-ngong/ruong-ruoi-va-chuyen-chon-giong-thuan-viet-st25"
-                    data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width=""
+                    data-layout="button" data-action="like" data-size="small" data-share="true"></div>
             </div>
             <div style="width: 100%;">
                 <div class="fb-comments"
@@ -225,7 +224,8 @@
             </div>
             <div>
                 <div class="related-articles-body">
-                    <label class="lbl-h2" style="margin-left: -20px;">CÁC BÀI VIẾT LIÊN QUAN</label>
+                    <label class="lbl-h2" style="margin-left: -20px; margin-bottom: 20px;">CÁC BÀI VIẾT LIÊN
+                        QUAN</label>
                     <ul class="no-bullets">
                         <li>
                             <a href="">Gạo ST25 Lúa Tôm Vụ Tân Xuân</a>
@@ -264,3 +264,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

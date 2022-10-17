@@ -1,14 +1,14 @@
-<app-header3></app-header3>
+<app-header></app-header>
 <div class="container">
     <div class="breadcrumb-small">
-        <div>
-            <label class="lbl-h1">Chia sẻ công nghiệp</label>
-        </div>
         <a [routerLink]="['/']" title="Quay trở về trang chủ">Trang chủ</a>
         <span aria-hidden="true">/</span>
         <span>Tin tức</span>
         <span aria-hidden="true">/</span>
         <span>Chia sẻ kinh nghiêm</span>
+        <div>
+            <label class="lbl-h1">Chia Sẻ Công Nghiệp</label>
+        </div>
     </div>
     <div style="text-align: center;">
         <div *ngFor="let item of tintucList" class="article-item article-item-list">
@@ -26,16 +26,7 @@
         </div>
     </div>
     <div class="paging">
-        <ul class="page">
-            <li class="page__numbers"> 1</li>
-            <li class="page__numbers active">2</li>
-            <li class="page__numbers">3</li>
-            <li class="page__numbers">4</li>
-            <li class="page__numbers">5</li>
-            <li class="page__numbers">6</li>
-            <li class="page__dots">...</li>
-            <li class="page__numbers"> 10</li>
-        </ul>
+        <span>Xem thêm</span>
     </div>
     <div>
         <div class="group">
@@ -65,7 +56,7 @@
         </div>
     </div>
     <div>
-        <label style="margin-left: 20px;" class="lbl-h1">Báo chí nói gì về Ngỗn</label>
+        <label style="margin-left: 20px;" class="lbl-h1">Báo Chí Nói Gì Về Ngỗng</label>
         <div>
             <div *ngFor="let item of baochiList" class="article-item article-item-list">
                 <div class="article-image">
@@ -83,3 +74,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>
