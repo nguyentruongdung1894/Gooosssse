@@ -29,6 +29,7 @@ export class CarouselComponent implements OnInit {
     @Input() form: boolean = false;
     @Input() showButton: boolean = true;
     @Input() numVisible: number = 4;
+    @Input() latestnews: boolean = false;
     @Input() responsiveOptions: any = [
         {
             breakpoint: '1024px',

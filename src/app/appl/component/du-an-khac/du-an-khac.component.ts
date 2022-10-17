@@ -8,9 +8,9 @@ import { Router } from "@angular/router";
     styleUrls: ['du-an-khac.component.scss']
 })
 export class DuAnKhacComponent implements OnInit{
-    numVisible: number = 0;
-
     isShow = true;
+
+    images = [1, 2, 3, 4];
 
     tintucList = [
         'https://file.hstatic.net/200000170631/article/logo_ngong__600_x_375__29344ad4b48045eea1b44ff92fc8af04_large.png',
@@ -38,39 +38,8 @@ export class DuAnKhacComponent implements OnInit{
         }
     ];
 
-    imagetrademark = [
-        {
-            image: "../../../../assets/image/icons/hteamus_3.webp"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_2.webp"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_5.png"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_7.webp"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_9.webp"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_3.webp"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_2.webp"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_5.png"
-        },
-        {
-            image: "../../../../assets/image/icons/hteamus_7.webp"
-        }
-    ]
-
     constructor(
     ) {
-        this.numVisible = 6;
     }
     ngOnInit() {
 

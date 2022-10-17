@@ -179,3 +179,27 @@
         </div>
     </ng-template>
 </p-carousel>
+
+<!-- Latest News -->
+<p-carousel *ngIf="latestnews" [num] [value]="datas" styleClass="custom-carousel" [numVisible]="numVisible" [numScroll]="1"
+    [circular]="true" [showIndicators]="false" [autoplayInterval]="3500" [responsiveOptions]="responsiveOptions">
+    <ng-template let-data pTemplate="item">
+        <div class="latestnewss">
+            <div class="article-item article-item-list">
+                <div class="article-image">
+                    <a [routerLink]="['/chi-tiet-tin-tuc']">
+                        <img src="https://file.hstatic.net/200000170631/article/logo_ngong__600_x_375__29344ad4b48045eea1b44ff92fc8af04_large.png"> 
+                    </a>
+                </div>
+                <div class="article-info">
+                    <a [routerLink]="['/chi-tiet-tin-tuc']" class="article-title">
+                        Tin nông nghiệp VN số 1 ruộng rươi
+                    </a>
+                    <div>
+                        Gạo ST25 sát trắng ruộng rươi nguyên cám 100%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
