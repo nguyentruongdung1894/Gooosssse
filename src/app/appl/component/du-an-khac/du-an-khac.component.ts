@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { ViewportScroller } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'du-an-khac',
     templateUrl: 'du-an-khac.component.html',
     styleUrls: ['du-an-khac.component.scss']
 })
-export class DuAnKhacComponent {
+export class DuAnKhacComponent implements OnInit{
     numVisible: number = 0;
 
     isShow = true;
@@ -74,11 +76,11 @@ export class DuAnKhacComponent {
 
     }
 
-    chooseform1() {
+    chooseform1(){
         this.isShow = true;
     }
 
-    chooseform2() {
+    chooseform2(){
         this.isShow = false;
     }
 }
