@@ -33,13 +33,13 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a [routerLink]="['/danh-muc-du-an']">dự án<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a [routerLink]="['/trang-chu-du-an']">dự án<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="no-bullets dropdown-menu">
                     <li>
                         <a [routerLink]="['/chuyen-di-cua-ngong']">chuyến đi của ngỗng</a>
                     </li>
                     <li>
-                        <a href="/du-an-khac">dự án khác</a>
+                        <a [routerLink]="['/du-an-khac']">dự án khác</a>
                     </li>
                 </ul>
             </li>
@@ -62,16 +62,19 @@
                 </ul>
             </li>
             <li class=" dropdown">
-                <a>hợp tác<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a [routerLink]="['/chi-tiet-tuyen-dung']">hợp tác<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="no-bullets dropdown-menu">
                     <li>
                         <a [routerLink]="['/chinh-sach-dai-ly-ctv']">chính sách đại lý CTV - new</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/he-thong-doi-tac']">hệ thống đối tác</a>
+                        <a [routerLink]="['/he-thong-doi-tac-new']">hệ thống đối tác</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/tuyen-dung']">tuyển dụng new</a>
+                        <a [routerLink]="['/chi-tiet-tuyen-dung']">Chi tiết tuyển dụng</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/tuyen-dung-new']">tuyển dụng new</a>
                     </li>
                 </ul>
             </li>

@@ -1,13 +1,17 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 a {
     color: black;
     display: block;
 
-    &:hover {
+    &:hover{
         color: black;
     }
 }
 
-span {
+span{
     font-size: 18px;
 }
 
@@ -50,7 +54,7 @@ span {
             width: 100%;
             height: 100%;
 
-            .line {
+            .line{
                 border: 1px solid #87b83b;
                 width: 600px;
                 margin: 0 auto;
@@ -64,6 +68,11 @@ span {
                 .ladi-headline {
                     color: rgb(99, 145, 16);
                     font-weight: bold;
+                }
+
+                h2{
+                    text-transform: uppercase;
+                    font-size: 1.75rem;
                 }
             }
 
@@ -127,11 +136,11 @@ span {
                 }
             }
 
-            .article-item-left {
+            .article-item-left{
                 padding-right: 7px;
             }
 
-            .article-item-right {
+            .article-item-right{
                 padding-left: 7px;
             }
 
@@ -180,13 +189,13 @@ span {
             width: 100%;
             height: 100%;
 
-            .line {
+            .line{
                 border: 1px solid #87b83b;
                 width: 600px;
                 margin: 0 auto;
                 margin-bottom: 2px;
             }
-
+            
             .news-project {
                 top: 20px;
                 width: 100%;
@@ -267,7 +276,7 @@ span {
                             display: block;
                         }
 
-                        .checkmark {
+                        .checkmark{
                             float: left;
                             transform: rotate(45deg);
                             height: 20px;
@@ -315,7 +324,7 @@ span {
                             display: block;
                         }
 
-                        .checkmark {
+                        .checkmark{
                             float: left;
                             transform: rotate(45deg);
                             height: 20px;
@@ -341,7 +350,7 @@ span {
             height: 100%;
             margin-top: 40px;
 
-            .line {
+            .line{
                 border: 1px solid #87b83b;
                 width: 680px;
                 margin: 0 auto;
@@ -396,7 +405,7 @@ span {
                         padding-right: 30px;
                         margin-top: 50px;
 
-                        .stars {
+                        .stars{
                             margin-top: 30px;
                         }
                     }
@@ -452,7 +461,7 @@ span {
                             font-weight: bold;
                         }
 
-                        .stars {
+                        .stars{
                             margin-top: 30px;
                         }
                     }
@@ -546,7 +555,7 @@ span {
 
                     .article-schedule {
                         text-align: center;
-
+        
                         .btn-kp {
                             background-color: rgb(99, 145, 16);
                             border-radius: 15px;
@@ -559,12 +568,12 @@ span {
                             width: 80%;
                             border: none;
                             text-transform: uppercase;
-
+        
                             &:hover {
                                 box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
                                 transform: translateY(-2px);
                             }
-
+        
                             &:active {
                                 box-shadow: none;
                                 transform: translateY(0);

@@ -34,7 +34,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ThanhtoanComponent } from './component/thanhtoan/thanhtoan.component';
 import { DropdownModule } from 'primeng/dropdown';
-import { TrangChuDuAnComponent } from './component/trang-chu-du-an/trang-chu-du-an.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { LoginComponent } from './component/login/login.component';
@@ -44,12 +43,13 @@ import { AccordionModule } from 'primeng/accordion';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { TabViewModule } from 'primeng/tabview';
 import { DathangComponent } from './component/dathang/dathang.component';
-import { ChinhSachDaiLyCtvComponent } from './component/chinh-sach-dai-ly-ctv/chinh-sach-dai-ly-ctv.component';
-import { DuAnKhacComponent } from './component/du-an-khac/du-an-khac.component';
-import { TuyenDungNewComponent } from './component/tuyen-dung-new/tuyen-dung-new.component';
-import { HeThongDoiTacNewComponent } from './component/he-thong-doi-tac-new/he-thong-doi-tac-new.component';
-import { ChiTietTuyenDungComponent } from './component/chi-tiet-tuyen-dung/chi-tiet-tuyen-dung.component';
 import { CommentDialogComponent } from '../common/commentDialog/commentDialog.component';
+import { TrangChuDuAnComponent } from './component/trang-chu-du-an/trang-chu-du-an.component';
+import { ChiTietTuyenDungComponent } from './component/chi-tiet-tuyen-dung/chi-tiet-tuyen-dung.component';
+import { ChinhSachDaiLyCtvComponent } from './component/chinh-sach-dai-ly-ctv/chinh-sach-dai-ly-ctv.component';
+import { DuAnKhacComponent} from './component/du-an-khac/du-an-khac.component';
+import { HeThongDoiTacNewComponent} from './component/he-thong-doi-tac-new/he-thong-doi-tac-new.component';
+import { TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -72,7 +72,7 @@ import { CommentDialogComponent } from '../common/commentDialog/commentDialog.co
         OverlayPanelModule,
         AccordionModule,
         PanelMenuModule,
-        TabViewModule,
+        TabViewModule
     ],
     declarations: [
         MenuComponent,
@@ -94,17 +94,17 @@ import { CommentDialogComponent } from '../common/commentDialog/commentDialog.co
         ChitietsanphamComponent,
         GiohangComponent,
         ThanhtoanComponent,
-        TrangChuDuAnComponent,
         LoginComponent,
         AccountComponent,
         ChuyenDiCuaNgongComponent,
         DathangComponent,
+        CommentDialogComponent,
+        TrangChuDuAnComponent,
+        ChiTietTuyenDungComponent,
         ChinhSachDaiLyCtvComponent,
         DuAnKhacComponent,
-        TuyenDungNewComponent,
         HeThongDoiTacNewComponent,
-        ChiTietTuyenDungComponent,
-        CommentDialogComponent
+        TuyenDungNewComponent
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
@@ -128,16 +128,17 @@ import { CommentDialogComponent } from '../common/commentDialog/commentDialog.co
         ChitietsanphamComponent,
         GiohangComponent,
         ThanhtoanComponent,
-        TrangChuDuAnComponent,
         LoginComponent,
         AccountComponent,
         ChuyenDiCuaNgongComponent,
         DathangComponent,
-        DuAnKhacComponent,
-        TuyenDungNewComponent,
-        HeThongDoiTacNewComponent,
+        CommentDialogComponent,
+        TrangChuDuAnComponent,
         ChiTietTuyenDungComponent,
-        CommentDialogComponent
+        ChinhSachDaiLyCtvComponent,
+        DuAnKhacComponent,
+        HeThongDoiTacNewComponent,
+        TuyenDungNewComponent
     ]
 })
 export class ApplModule { }

@@ -2,6 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 declare let $: any;
+
 @Component({
     selector: 'chuyen-di-cua-ngong',
     templateUrl: 'chuyen-di-cua-ngong.component.html',
@@ -27,9 +28,9 @@ export class ChuyenDiCuaNgongComponent {
             numScroll: 1
         }
     ];
-
+    
     constructor(
-        private scroller: ViewportScroller,
+        private scroller: ViewportScroller, 
         private router: Router,
     ) {
         this.numVisible = 6;
@@ -80,11 +81,11 @@ export class ChuyenDiCuaNgongComponent {
         }
     ]
 
-    onScroll() {
+    onScroll(){
         this.scroller.scrollToAnchor("SECTION6");
     }
 
-    addNewElement() {
+    addNewElement(){
         var cointainer = $('#btntest').closest('.add-dele');
         var counts = cointainer.children('.gradient-border').length;
         var content = $('#btntest').prev();
@@ -94,22 +95,22 @@ export class ChuyenDiCuaNgongComponent {
             $('#btntest').hide();
         }
 
-        content.clone(true, true).insertAfter(content);
+        content.clone(true,true).insertAfter(content);
         cointainer.find('.removeBtn').show();
     }
 
-    deleteNewElement() {
+    deleteNewElement(){
         var cointainer = $(this).closest('.add-dele');
         var counts = cointainer.children('.gradient-border').length;
 
         counts--;
-        if (counts < 4) {
+        if(counts < 4) {
             cointainer.children('.addBtn').show();
             if (counts == 1) {
                 cointainer.find('.removeBtn').hide();
             }
         }
-
+        
         $(this).parent().remove();
     }
 }
