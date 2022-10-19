@@ -21,6 +21,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     account: any = null;
     isaccount = false;
     private _visibleSidebar = false;
+
+    doitendodi = false;
     @Input() set visibleSidebar(value: any) {
         this._visibleSidebar = value;
         if (value) {
