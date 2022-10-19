@@ -55,14 +55,12 @@
 
                             span {
                                 margin-left: 10px;
-                                text-decoration-line: underline;
                                 cursor: default;
                             }
                         }
 
                         .image {
                             width: 44%;
-                            background-color: #fbf7f7;
                             padding: 10px;
                             padding-left: 20px;
 
@@ -116,6 +114,14 @@
 
                 .p-float-label {
                     margin-right: 10px;
+                }
+
+                .use-btn{
+                    background-color: #87b93b;
+                    border: none;
+                    color: black;
+                    border-radius: 5px;
+                    padding: 0px 20px;
                 }
             }
 

@@ -76,14 +76,14 @@
 
         <div class="sidebox-order">
             <div class="voucher">
-                <span class="p-float-label">
-                    <input id="float-input" type="text" pInputText [(ngModel)]="voucher" cher>
-                    <label for="float-input">Mã giảm giá</label>
+                <span style="margin-right: 8px;">
+                    <input placeholder="Mã giảm giá" id="float-input" type="text" pInputText [(ngModel)]="voucher" cher>
+                    <!-- <label for="float-input">Mã giảm giá</label> -->
                 </span>
-                <p-button label="Sử dụng"></p-button>
+                <button class="use-btn">Sử dụng</button>
             </div>
             <div class="order">
-                <span>Tổng thanh toán: </span>
+                <span style="margin-right: 10px;">Tổng thanh toán: </span>
                 <span class="total"> {{formatCash(total)}} ₫</span>
                 <button pButton pRipple (click)="onBuyNow()" type="button" label="Mua Hàng"
                     [disabled]=" +(total) ? false: true" class="p-button-danger"></button>

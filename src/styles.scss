@@ -117,6 +117,28 @@ a {
     text-align: center;
 }
 
+.p-element .p-inputtext:enabled:hover {
+    border-color: #a36d10;
+}
+
+.p-element .p-button
+{
+    background-color: #a36d10;
+    border: 1px solid #a36d10;
+}
+
+.p-element .p-button:enabled:hover
+{
+    background-color: #a36d10;
+    border-color: #a36d10;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+    border-color: #a36d10 !important;
+    background: #a36d10 !important;
+}
+
+
 @media (max-width: 768px) {
     .lbl-title {
         font-size: 18px;
