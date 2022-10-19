@@ -79,6 +79,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         location.reload();
     }
 
+    onClick_ReGioHang(){
+        this.router.navigate(['gio-hang']);
+    }
+
     onClickCart(event: any) {
         this.visibleSidebar = false;
         Utils.sha256((Math.random() + 1).toString(36).substring(7)).then(eCode => {
