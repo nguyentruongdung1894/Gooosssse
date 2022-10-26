@@ -1,58 +1,73 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, throwError } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
 export class HttpService {
 
-    private _urlUser = 'https://ngong-3826.herokuapp.com/login';
-    private _urlNews = 'http://103.175.147.224:1234/news/list';
-    private _urlMocky = 'https://run.mocky.io/v3/56b571d2-7c8c-45ea-9459-7d30dfdc6275';
+    private _url = 'https://ngong-3826.herokuapp.com';
     constructor(private _httpClient: HttpClient) {
-    }
-
-    getHeader() {
-        // const token = localStorage.getItem('token');
-        const token = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyX25nb25nQGdtYWlsLmNvbSIsImV4cCI6MTY2NTk0OTE4NSwiaWF0IjoxNjY1OTMxMTg1fQ.w0Y3ovR_zsuUwq_8p0Uw4t6kKf9UCJgImwRZxXWDCZXAC91QhLHemhbZDIe9tEWL3EEsDTanw50T7mP2mVMc1A';
-        return token ? new HttpHeaders().set('Authorization', 'Bearer' + token) : null;
     }
 
     reqeustApiPost(api: string, params: any) {
         let url = '';
-
-        if (api === 'user') {
-            url = this._urlUser;
-        }
-        return this._httpClient.get('https://ngong-3826.herokuapp.com/health')
         let header = new HttpHeaders({
             'accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer eyJleHAiOjE1OTU0NzE5MjMsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzQxIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNDEifQ'
         });
-        if (header instanceof HttpHeaders) {
-            return this._httpClient.post('https://ngong-3826.herokuapp.com/login', {
-                "username": "user_ngong@gmail.com",
-                "password": "1234"
-            }, { headers: header });
+        if (api === 'login') {
+            url = `${this._url}/login`;
         }
-        return this._httpClient.post(url, {
-            params: params, Headers: {
-                'accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        });
+        if (api === 'regisAccount') {
+            url = `${this._url}/register`;
+        }
+
+        if (api === 'products') {
+            url = `${this._url}/products`;
+        }
+
+        if (api === 'carts') {
+            url = `${this._url}/carts`;
+        }
+
+        return this._httpClient.post(url, params, { headers: header });
     }
 
     reqeustApiget(api: string, params: any = null) {
         let url = '';
-        if (api === 'news') {
-            url = this._urlNews;
+        let header = new HttpHeaders({
+            'accept': 'application/json',
+            'Content-Type': 'application/json'
+        });
+
+        switch (api) {
+            case 'news':
+                url = `${this._url}/news`;
+                break;
+            case 'productDetails':
+                url = `${this._url}/products/${params}`;
+                break;
+            case 'product_categories':
+                url = `${this._url}/product_categories`;
+                break;
+            case 'posts':
+                url = `${this._url}/posts?menuCode=chuyen-ngong&pageIndex=1&pageSize=10`;
+                break;
+            default:
+                break;
         }
-        if (api === 'test') {
-            url = this._urlMocky;
-        }
-        return this._httpClient.get(url, { params: params });
+        return this._httpClient.get(url, { headers: header, params: params }).pipe(catchError(this.handleError));
     }
 
-
+    private handleError(error: HttpErrorResponse) {
+        if (error.status === 0) {
+            // A client-side or network error occurred. Handle it accordingly.
+            console.error('An error occurred:', error.error);
+        } else {
+            console.log(error);
+        }
+        // Return an observable with a user-facing error message.
+        return throwError(() => new Error('Something bad happened; please try again later.'));
+    }
 }

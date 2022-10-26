@@ -1,12 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MessageService } from 'primeng/api';
 import { ProductDialogComponent } from '../productDialog/productDialog.component';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 @Component({
     selector: 'app-img-product',
     templateUrl: './img-product.component.html',
     styleUrls: ['./img-product.component.scss'],
-    providers: [DialogService, MessageService]
+    providers: [DialogService]
 })
 export class ImgProductComponent implements OnInit {
 

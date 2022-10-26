@@ -1,16 +1,20 @@
 import { ViewportScroller } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ComponentBaseComponent } from 'src/app/common/componentBase/componentBase.component';
+import { HttpService } from 'src/app/common/service/http-service';
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'du-an-khac',
     templateUrl: 'du-an-khac.component.html',
     styleUrls: ['du-an-khac.component.scss']
 })
-export class DuAnKhacComponent implements OnInit{
+export class DuAnKhacComponent extends ComponentBaseComponent implements OnInit{
     isShow = true;
 
     images = [1, 2, 3, 4];
+
+    postList = [];
 
     tintucList = [
         'https://file.hstatic.net/200000170631/article/logo_ngong__600_x_375__29344ad4b48045eea1b44ff92fc8af04_large.png',
@@ -38,18 +42,23 @@ export class DuAnKhacComponent implements OnInit{
         }
     ];
 
-    constructor(
-    ) {
+    constructor(private httpService: HttpService) {
+        super(new MessageService);
     }
+
     ngOnInit() {
-
-    }
-
-    chooseform1(){
-        this.isShow = true;
-    }
-
-    chooseform2(){
-        this.isShow = false;
+        // this.showDialog('on');
+        // this.httpService.reqeustApiget('posts').subscribe((response: any) => {
+        //     this.postList = response.postList;
+        //     console.log(response.postList);
+        //     this.postList.forEach((item: any) => {
+        //         item.postImage = 'https://file.hstatic.net/200000170631/article/logo_ngong__600_x_375__29344ad4b48045eea1b44ff92fc8af04_large.png';
+        //     });
+        //     // if (this.postList.length <= 12) {
+        //     //     this.isShowButton = true;
+        //     // }
+        //     // this.isShowButton = this.postList.length <= 12 ? false : true;
+        //     this.showDialog('off');
+        // });
     }
 }

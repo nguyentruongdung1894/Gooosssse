@@ -56,7 +56,7 @@ export class TintucComponent implements OnInit {
     constructor(private httpService: HttpService) { }
 
     ngOnInit() {
-        this.httpService.reqeustApiget('news').subscribe(response => {
+        this.httpService.reqeustApiget('posts').subscribe(response => {
             console.log(response);
         });
     }

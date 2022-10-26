@@ -1,7 +1,7 @@
 <app-header #header></app-header>
 <div class="container chi-tiet-san-pham">
     <div class="breadcrumb-small">
-        <a [routerLink]="['/']" title="Quay trở về trang chủ">Trang chủ</a>
+        <a target="_self" href="/" title="Quay trở về trang chủ">Trang chủ</a>
         <span aria-hidden="true">/</span>
         <span>Danh mục sản phẩm</span>
         <span aria-hidden="true">/</span>
@@ -156,7 +156,7 @@
                     <div class="product-group-cotent">
                         <div *ngFor="let image of imagesProductGroup" class="article-item-list">
                             <div class="article-image">
-                                <a [routerLink]="['/chi-tiet-san-pham']"><img style="width: 90px;" [src]="image"></a>
+                                <a target="_self" href="/chi-tiet-san-pham"><img style="width: 90px;" [src]="image"></a>
                             </div>
                             <div class="article-info">
                                 <a class="article-title">
@@ -194,7 +194,7 @@
                             <div class="starbap-rev-widg__summary-text">(83)</div>
                         </div>
                         <div class="pro-price">
-                            <span>Giá bán:</span>
+                            <span style="margin-right: 10px;">Giá bán:</span>
                             <span class="current-price ProductPrice">210,000 ₫</span>
                             <span class="original-price ComparePrice"><s style="display: inline;">265,000 ₫</s></span>
                             <div class="sale-percentage"><span class="PriceSaving" style="display: inline;">(-10
@@ -202,7 +202,7 @@
                         </div>
                         <div class="product-quantity">
                             <div class="qty-addcart">
-                                <span>Số lượng </span>
+                                <span style="margin-right: 5px;">Số lượng </span>
                                 <div class="js-qty">
                                     <p-inputNumber [(ngModel)]="inputQuantity" [showButtons]="true" [size]="1" [min]="1"
                                         buttonLayout="horizontal" spinnerMode="horizontal" inputId="horizontal"
@@ -217,9 +217,12 @@
                                 class="btnHome btnBuyNow">MUA
                                 NGAY</button>
                             <button name="add" (click)="addCart($event)" id="AddToCart2"
-                                class="btnHome btnAddToCart">THÊM
+                                class="btnHome btnAddToCart"><img
+                                    src="../../../../assets/image/main/gio-hang3-removebg-preview.png" />THÊM
                                 VÀO GIỎ HÀNG</button>
-                            <a href="tel:0945348008" name="add" id="AddToCart2" class="btnHome btnCall">LIÊN HỆ MUA
+                            <a href="tel:0945348008" name="add" id="AddToCart2" class="btnHome btnCall"><img
+                                    src="../../../../assets/image/main/190fac1a5fd71e2297e7e278f0be9f25-removebg-preview.png" />LIÊN
+                                HỆ MUA
                                 HÀNG</a>
                         </div>
                     </div>
@@ -235,6 +238,22 @@
             <div class="content">
                 <div class="ToggleContent__Wrapper-sc-1dbmfaw-1 cqXrJr">
                     <div class="ToggleContent__View-sc-1dbmfaw-0 wyACs">
+                        <ul></ul>
+                        Model: LISA 25 CURVED
+                        Kích thước cáp sử dụng: 940*400mm. Loại 18 thanh sấy.
+                        Sử dụng nước và điện có thể option.
+                        Công suất tỏa nhiệt: 388W, đầu kết nối D20 Pipe.
+                        Bộ điều khiển tay gắn ngoài. chức năng đóng mở nước cấp.
+                        Thép mạ siêu đẹp, màu trắng sang trọng, không bám bụi, thép đuc nguyên khối.
+                        Nhiệt độ bề mặt lên 110oC, nhiệt độ liên tục duy trì đảm bảo khô khăn, không ẩm mốc, diệt khuẩn,
+                        không độ ồn, an toàn
+                        tuyệt đối khi sử dụng.
+                        Trọng lượng: 9kg
+                        Loại gắn tường. được thiết kế theo chuẩn Eco disgner của Ý.
+                        Tai treo, hoặc âm trần, bắt lên tường.
+                        Ứng dụng : vách tường, văn phòng, phòng ngủ, khác, không gian sử dụng công cộng. phù hợp cho
+                        khách sạn, resort, villa..
+                        Nhập khẩu: Italia
                         <p><span><strong style="color: rgb(17, 90, 226);">Quạt thông gió âm trần TFV-D15
                                     ZPD:</strong>hút thông gió không gian tĩnh phòng
                                 khách, phòng ngủ, nhà bếp, phòng vệ sinh, nhà tắm, văn phòng, phòng hút thuốc... thông
@@ -284,7 +303,7 @@
                 </div>
             </div>
         </div>
-        <div class="startbap_product_reviews">
+        <div #reviews class="startbap_product_reviews">
             <div class="startbap_product_title">
                 <label>ĐÁNH GIÁ SẢN PHẨM</label>
             </div>

@@ -15,4 +15,12 @@ export class Utils {
         return hashHex;
     }
 
+    static timeStempToDateFormat(time: any) {
+        const date = new Date(time);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDay();
+        return `${year}/${month}/${day}`;
+    }
+
 }

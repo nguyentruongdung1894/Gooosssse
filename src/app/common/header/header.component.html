@@ -12,7 +12,7 @@
             </div>
             <img class="search" src="../../../../assets/image/main/icon search.png" />
             <a><img class="notification" src="../../../../assets/image/main/notification.png" /></a>
-            <a [routerLink]="['/mua-o-dau']" class="mua-o-dau-link">
+            <a href="/mua-o-dau" class="mua-o-dau-link">
                 <div><img class="mua-o-dau" src="../../../../assets/image/main/mua_o_dau.png" /></div>
                 <div>Mua Ở Đâu</div>
             </a>
@@ -20,8 +20,7 @@
                 <div><img class="tai-khoan" src="../../../../assets/image/main/tai-khoan.png" /></div>
                 <div>Tài Khoản</div>
             </div>
-            <!-- <a (click)="visibleSidebar = true"><img src="../../../../assets/image/main/gio-hang.png" /></a> -->
-            <a (mouseover)="doitendodi = true" (click)="onClick_ReGioHang()"><img src="../../../../assets/image/main/gio-hang.png" /></a>
+            <a (click)="visibleSidebar = true"><img src="../../../../assets/image/main/gio-hang.png" /></a>
         </div>
     </div>
     <div #menu class="header-desktop" [class]="banner ? 'banner' : ''">
@@ -47,62 +46,14 @@
             <div style="width: 100%; border-bottom: 1px solid #ccc;"></div>
             <div class="product">
                 <div class="product_image" *ngFor="let item of product; let i = index">
-                    <a [routerLink]="['/chi-tiet-san-pham']" (click)="visibleSidebar = false">
+                    <a target="_self" href="/chi-tiet-san-pham" (click)="visibleSidebar = false">
                         <img src="  //product.hstatic.net/200000170631/product/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_medium.jpg"
                             alt="Mật Trà Kombucha Cốt Chuối">
                     </a>
                     <div class="item-content">
                         <div class="content">
-                            <a (click)="visibleSidebar = false" class="title"
-                                [routerLink]="['/chi-tiet-san-pham']">{{item ?
-                                item.title:
-                                ''}}
-                            </a><br>
-                            <span class="total-price">{{item ? formatCash(item.totalPrice) :
-                                ''}} ₫</span>
-                        </div>
-                        <div class="quantity">
-                            <p-inputNumber [(ngModel)]="item.quantity" [showButtons]="true" [size]="3" [min]="0"
-                                (onInput)="onChange($event, i)" buttonLayout="horizontal" spinnerMode="horizontal"
-                                inputId="horizontal" decrementButtonClass="btn-input-number"
-                                incrementButtonClass="btn-input-number" incrementButtonIcon="pi pi-plus"
-                                decrementButtonIcon="pi pi-minus">
-                            </p-inputNumber>
-                        </div>
-                        <div class="quantity"><a style="cursor: default;" (click)="onRemove(i)">Xóa</a></div>
-                    </div>
-                </div>
-
-                <div class="total">
-                    <span class="tongtien">TỔNG TIỀN</span>
-                    <span>{{total ? formatCash(total) :
-                        ''}} ₫</span>
-                </div>
-            </div>
-            <button type="button" (click)="onClickCart($event)" styleClass="p-button-success">THANH TOÁN</button>
-        </div>
-        <div *ngIf="(this.product && !this.product.length) || !this.product">
-            <h1 style="font-weight:normal">Giỏ hàng</h1>
-            <div style="width: 100%; border-bottom: 1px solid #ccc;"></div>
-            <span>Giỏ hàng trống</span>
-        </div>
-    </p-sidebar>
-
-
-    <p-sidebar [(visible)]="doitendodi" position="right" [baseZIndex]="10000" [style]="{width:'30%'}">
-        <div class="product-cart" *ngIf="this.product && this.product.length">
-            <h1 style="font-weight:normal">Giỏ hàng</h1>
-            <div style="width: 100%; border-bottom: 1px solid #ccc;"></div>
-            <div class="product">
-                <div class="product_image" *ngFor="let item of product; let i = index">
-                    <a [routerLink]="['/chi-tiet-san-pham']" (click)="visibleSidebar = false">
-                        <img src="  //product.hstatic.net/200000170631/product/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_medium.jpg"
-                            alt="Mật Trà Kombucha Cốt Chuối">
-                    </a>
-                    <div class="item-content">
-                        <div class="content">
-                            <a (click)="visibleSidebar = false" class="title"
-                                [routerLink]="['/chi-tiet-san-pham']">{{item ?
+                            <a (click)="visibleSidebar = false" class="title" href="/chi-tiet-san-pham">{{item
+                                ?
                                 item.title:
                                 ''}}
                             </a><br>
@@ -127,6 +78,7 @@
                         ''}} ₫</span>
                 </div>
             </div>
+            <a target="_self" href="gio-hang">Giỏ hàng</a>
             <button type="button" (click)="onClickCart($event)" styleClass="p-button-success">THANH TOÁN</button>
         </div>
         <div *ngIf="(this.product && !this.product.length) || !this.product">
@@ -136,23 +88,24 @@
         </div>
     </p-sidebar>
 
-    <p-overlayPanel #op [style]="{width: '250px'}">
+    <p-overlayPanel #op [style]="{width: '250px', top: '0px'}">
         <ng-template pTemplate>
             <div class="button-account">
                 <span style="font-weight: bold;">{{account ? account.username : ''}}</span>
-                {{account ? account : ''}}
-                <button type="button" (click)="openDialogLogin(true)" class="p-button-outlined">
+                <button type="button" *ngIf="!account" (click)="openDialogLogin(true)" class="p-button-outlined">
                     Đăng Nhập
                 </button>
-                <button type="button" (click)="openDialogLogin()" class="p-button-outlined">
+                <button type="button" *ngIf="!account" (click)="openDialogLogin()" class="p-button-outlined">
                     Đăng Ký
                 </button>
             </div>
-            <div class="account-content" style="display: flex; flex-direction: column;">
-                <a [routerLink]="['/tai-khoan']">Thông tin tài khoản</a>
+            <div class="account-content" *ngIf="account" style="display: flex; flex-direction: column;">
+                <div style="width: 100%; height: 1px; background-color: #ccc;"></div>
+                <a href="/tai-khoan" target="_self">Thông tin tài khoản</a>
                 <div style="width: 100%; height: 1px; background-color: #ccc;"></div>
                 <a class="logout" (click)="onLogOut()">Đăng Xuất</a>
             </div>
         </ng-template>
     </p-overlayPanel>
 </header>
+<p-toast position="top-center" key="tc"></p-toast>

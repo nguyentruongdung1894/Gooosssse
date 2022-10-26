@@ -5,6 +5,7 @@ import { ProductDialogComponent } from 'src/app/common/productDialog/productDial
 import { FileModel } from 'src/app/common/model/file.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CommentDialogComponent } from 'src/app/common/commentDialog/commentDialog.component';
+import { HttpService } from 'src/app/common/service/http-service';
 
 @Component({
     selector: 'app-danhmucsanpham',
@@ -14,9 +15,10 @@ import { CommentDialogComponent } from 'src/app/common/commentDialog/commentDial
 })
 export class DanhmucsanphamComponent implements OnInit {
     isShow = false;
-
+    isShowbutton = false;
     imageList: FileModel[] = [];
-    constructor(private dialogService: DialogService, private sanitizen: DomSanitizer) { }
+    productList: any[] = [];
+    constructor(private dialogService: DialogService, private sanitizen: DomSanitizer, private httpService: HttpService) { }
     @ViewChild('header', { static: false }) header!: HeaderComponent;
     @ViewChild('comment', { static: false }) comment!: ElementRef;
     ref!: DynamicDialogRef;
@@ -29,22 +31,18 @@ export class DanhmucsanphamComponent implements OnInit {
     ]
 
     imagesProduct = [
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
-        '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp',
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
+        { 'id': 'SP000001', image: '../../../../assets/image/products/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_large.webp' },
     ];
 
     imagesProductWatch = [
@@ -151,6 +149,19 @@ export class DanhmucsanphamComponent implements OnInit {
     ];
 
     ngOnInit() {
+        this.httpService.reqeustApiget('products', {
+            "categoryId": 0,
+
+        }).subscribe((data: any) => {
+            console.log(data);
+        });
+        this.productList = [...this.imagesProduct.slice(0, 12)];
+        this.isShowbutton = this.imagesProduct.length > 12 ? true : false;
+    }
+
+    show() {
+        this.productList = [...this.imagesProduct];
+        this.isShowbutton = false;
     }
 
     openDialog(): void {
@@ -228,6 +239,10 @@ export class DanhmucsanphamComponent implements OnInit {
                 'comment': this.comment.nativeElement.value
             }
         });
+    }
+
+    detailProduct(id: string) {
+        window.open(`${window.location.origin}/chi-tiet-san-pham?code=${id}`, "_self");
     }
 
 }

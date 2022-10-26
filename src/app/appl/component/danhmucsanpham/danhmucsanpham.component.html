@@ -1,7 +1,7 @@
 <app-header #header></app-header>
 <div class="container product-list">
     <div class="breadcrumb-small">
-        <a [routerLink]="['/']" title="Quay trở về trang chủ">Trang chủ</a>
+        <a target="_self" href="/" title="Quay trở về trang chủ">Trang chủ</a>
         <span aria-hidden="true">/</span>
         <span>Danh mục sản phẩm</span>
     </div>
@@ -17,15 +17,15 @@
     <div style="width: 100%;">
         <div class="product-content">
             <div style="float: left;">
-                <div *ngFor="let image of imagesProduct"
+                <div *ngFor="let product of productList"
                     class="grid__item large--one-whole medium--one-whole small--one-whole">
                     <div class="product-item">
                         <div class="product-img">
-                            <div class="product-item-countdown"></div><a [routerLink]="['/chi-tiet-san-pham']"><img
-                                    id="1026970643" alt="Bột Sắn Dây Ông Hòa 700gr" [src]="image"></a>
+                            <div class="product-item-countdown"></div><a (click)="detailProduct(product.id)"><img
+                                    id="1026970643" alt="Bột Sắn Dây Ông Hòa 700gr" [src]="product.image"></a>
                         </div>
                         <div class="product-info">
-                            <div class="product-title"><a [routerLink]="['/chi-tiet-san-pham']">Mật Trà Kombucha Cốt
+                            <div class="product-title"><a (click)="detailProduct(product.id)">Mật Trà Kombucha Cốt
                                     Chuối</a></div>
                             <div data-id="1026970643" data-url="bot-san-day-ong-hoa-700gr"
                                 class="starbaprv-widget starbaprv-preview-badge starbaprv-preview-badge--with-link">
@@ -41,7 +41,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-show-products"><button class="btn-show-products">Xem thêm sản phẩm</button></div>
+                <div class="box-show-products"><button *ngIf="isShowbutton" class="btn-show-products"
+                        (click)="show()">Xem thêm ({{imagesProduct.length - productList.length}}) sản phẩm</button>
+                </div>
             </div>
             <div class="pro-tabcontent" style="display: block;">
                 <div class="group" style="border-top: 2px solid #ccc;">
@@ -222,7 +224,8 @@
                     <div class="product-sale">
                         <div *ngFor="let image of imagesProductSale" class="article-item article-item-list">
                             <div class="article-image">
-                                <a [routerLink]="['/chi-tiet-san-pham']"><img style="width: 100px;" [src]="image"></a>
+                                <a target="_self" href="/chi-tiet-san-pham"><img style="width: 100px;"
+                                        [src]="image"></a>
                             </div>
                             <div class="article-info">
                                 <a class="article-title">

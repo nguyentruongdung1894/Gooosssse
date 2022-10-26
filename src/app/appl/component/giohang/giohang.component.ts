@@ -42,9 +42,8 @@ export class GiohangComponent implements OnInit {
 
     onBuyNow() {
         Utils.sha256((Math.random() + 1).toString(36).substring(7)).then(eCode => {
-            let productOrder = {};
             sessionStorage.setItem(eCode, JSON.stringify(this.product));
-            this.router.navigate(['thanh-toan', eCode]);
+            window.open(`${window.location.origin}/thanh-toan?code=${eCode}`, "_self");
         });
     }
 

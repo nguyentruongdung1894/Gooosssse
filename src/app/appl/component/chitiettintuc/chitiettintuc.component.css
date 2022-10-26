@@ -61,6 +61,14 @@ a,
     margin-right: 5px;
 }
 
+.chitiettintuc img {
+    width: 100%;
+}
+
+.entry-content {
+    font-size: 16px;
+}
+
 .chitiettintuc .ribbon>.content {
     color: white;
     font-size: 1.25rem;

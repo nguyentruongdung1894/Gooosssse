@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, Renderer2, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from 'src/app/common/header/header.component';
+import { HttpService } from 'src/app/common/service/http-service';
 
 @Component({
     selector: 'app-chitietsanpham',
@@ -14,6 +15,7 @@ export class ChitietsanphamComponent implements OnInit {
     @ViewChild('productFix', { static: true }) productFix!: ElementRef;
     @ViewChild('option100', { static: false }) option100!: ElementRef;
     @ViewChild('option500', { static: false }) option500!: ElementRef;
+    @ViewChild('reviews', { static: true }) reviews!: ElementRef;
     @Input() value: unknown
     @Output() valueChange = new EventEmitter<unknown>();
     isShow: boolean = false;
@@ -277,9 +279,12 @@ export class ChitietsanphamComponent implements OnInit {
         }
     ];
 
-    constructor(private router: Router, private render: Renderer2) { }
+    constructor(private router: Router, private render: Renderer2, private httpService: HttpService) { }
 
     ngOnInit() {
+        this.httpService.reqeustApiget('productDetails', window.location.search.split('?code=')[1]).subscribe((response: any) => {
+            console.log(response);
+        });
         this.render.listen(document, 'scroll', (e) => {
             const scrollTop = (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
             console.log(scrollTop);

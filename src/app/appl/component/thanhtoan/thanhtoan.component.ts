@@ -1,14 +1,22 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { ComponentBaseComponent } from 'src/app/common/componentBase/componentBase.component';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
     selector: 'app-thanhtoan',
     templateUrl: './thanhtoan.component.html',
-    styleUrls: ['./thanhtoan.component.scss']
+    styleUrls: ['./thanhtoan.component.scss'],
+    providers: [DialogService, MessageService]
 })
-export class ThanhtoanComponent implements OnInit {
+export class ThanhtoanComponent extends ComponentBaseComponent implements OnInit {
 
+    @ViewChild('name', { static: true }) name!: ElementRef;
+    @ViewChild('tel', { static: true }) tel!: ElementRef;
+    @ViewChild('email', { static: true }) email!: ElementRef;
     voucher = '';
     checked = false;
     isCard = false;
@@ -30,10 +38,34 @@ export class ThanhtoanComponent implements OnInit {
     product: any;
     total = '';
     ship = '30,000';
-    constructor(private router: Router, private http: HttpClient) { }
+    account: any = {
+        username: '',
+        email: '',
+        phone: ''
+    };
+    ref!: DynamicDialogRef;
+    constructor(private render: Renderer2, private router: Router, private http: HttpClient, private dialogService: DialogService
+        , private messageService1: MessageService) {
+        super(messageService1);
+    }
 
     ngOnInit() {
-        const ecode = this.router.url.split('/thanh-toan/')[1];
+        this.showDialog('on');
+        const account = JSON.parse(sessionStorage.getItem("account") as any);
+        if (account) {
+            this.account = account;
+        }
+        if (account) {
+            this.render.setAttribute(this.name.nativeElement, 'readonly', 'true');
+            this.render.setAttribute(this.tel.nativeElement, 'readonly', 'true');
+            this.render.setAttribute(this.email.nativeElement, 'readonly', 'true');
+        } else {
+            this.render.removeAttribute(this.name.nativeElement, 'readonly');
+            this.render.removeAttribute(this.tel.nativeElement, 'readonly');
+            this.render.removeAttribute(this.email.nativeElement, 'readonly');
+        }
+        console.log(this.account);
+        const ecode = window.location.search.split('?code=')[1];;
         this.product = JSON.parse(sessionStorage.getItem(ecode) as any);
         if (this.product && this.product.length) {
             let totalNumber = 0;
@@ -46,8 +78,39 @@ export class ThanhtoanComponent implements OnInit {
             console.log(datas);
             datas.forEach((data: any) => {
                 this.cities.push({ name: data.name, code: data.code, districts: data.districts });
+                this.showDialog('off');
             });
         })
+    }
+
+    openDialogLogin(): void {
+        this.ref = this.dialogService.open(LoginComponent, {
+            width: '30%',
+            contentStyle: { "height": "auto", "overflow": "auto" },
+            baseZIndex: 10000,
+            dismissableMask: true,
+            data: {
+                login: true,
+                func: this.onLogin.bind(this)
+            }
+        });
+    }
+
+    onLogin(severity: string = 'info', summary: string = 'Info', message: string = 'Message') {
+        const account = JSON.parse(sessionStorage.getItem("account") as any);
+        if (account) {
+            this.account = account;
+        }
+        if (account) {
+            this.render.setAttribute(this.name.nativeElement, 'readonly', 'true');
+            this.render.setAttribute(this.tel.nativeElement, 'readonly', 'true');
+            this.render.setAttribute(this.email.nativeElement, 'readonly', 'true');
+        } else {
+            this.render.removeAttribute(this.name.nativeElement, 'readonly');
+            this.render.removeAttribute(this.tel.nativeElement, 'readonly');
+            this.render.removeAttribute(this.email.nativeElement, 'readonly');
+        }
+        this.showMessage(severity, summary, message);
     }
 
     citiesChange(selectedCity1: any) {

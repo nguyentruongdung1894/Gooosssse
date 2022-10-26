@@ -47,9 +47,13 @@ import { CommentDialogComponent } from '../common/commentDialog/commentDialog.co
 import { TrangChuDuAnComponent } from './component/trang-chu-du-an/trang-chu-du-an.component';
 import { ChiTietTuyenDungComponent } from './component/chi-tiet-tuyen-dung/chi-tiet-tuyen-dung.component';
 import { ChinhSachDaiLyCtvComponent } from './component/chinh-sach-dai-ly-ctv/chinh-sach-dai-ly-ctv.component';
-import { DuAnKhacComponent} from './component/du-an-khac/du-an-khac.component';
-import { HeThongDoiTacNewComponent} from './component/he-thong-doi-tac-new/he-thong-doi-tac-new.component';
-import { TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.component';
+import { DuAnKhacComponent } from './component/du-an-khac/du-an-khac.component';
+import { HeThongDoiTacNewComponent } from './component/he-thong-doi-tac-new/he-thong-doi-tac-new.component';
+import { TuyenDungNewComponent } from './component/tuyen-dung-new/tuyen-dung-new.component';
+import { ComponentBaseComponent } from '../common/componentBase/componentBase.component';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
     imports: [
         BrowserModule,
@@ -72,7 +76,10 @@ import { TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.
         OverlayPanelModule,
         AccordionModule,
         PanelMenuModule,
-        TabViewModule
+        TabViewModule,
+        MessagesModule,
+        MessageModule,
+        ToastModule
     ],
     declarations: [
         MenuComponent,
@@ -104,7 +111,8 @@ import { TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.
         ChinhSachDaiLyCtvComponent,
         DuAnKhacComponent,
         HeThongDoiTacNewComponent,
-        TuyenDungNewComponent
+        TuyenDungNewComponent,
+        ComponentBaseComponent
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
@@ -138,7 +146,8 @@ import { TuyenDungNewComponent} from './component/tuyen-dung-new/tuyen-dung-new.
         ChinhSachDaiLyCtvComponent,
         DuAnKhacComponent,
         HeThongDoiTacNewComponent,
-        TuyenDungNewComponent
+        TuyenDungNewComponent,
+        ComponentBaseComponent
     ]
 })
 export class ApplModule { }

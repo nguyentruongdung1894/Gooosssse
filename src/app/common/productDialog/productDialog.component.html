@@ -1,13 +1,13 @@
 <div class="product-dialog">
     <div class="product-reviews">
         <div class="product_image">
-            <a [routerLink]="['/chi-tiet-san-pham']">
+            <a target="_self" href="/chi-tiet-san-pham">
                 <img src="  //product.hstatic.net/200000170631/product/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_medium.jpg"
                     alt="Mật Trà Kombucha Cốt Chuối">
             </a>
             <div class="item-content">
                 <div class="item-title">
-                    <a [routerLink]="['/chi-tiet-san-pham']" (click)="ref.close()">{{data ?
+                    <a target="_self" href="/chi-tiet-san-pham" (click)="ref.close()">{{data ?
                         data.title:
                         ''}}
                     </a><br>
@@ -69,7 +69,7 @@
                 <div class="product-button">
                     <button name="buy" id="buy-now" (click)="onClickBuyNew($event)" class="btnHome btnBuyNow">MUA
                         NGAY</button>
-                    <button class="show-product" [routerLink]="['/chi-tiet-san-pham']">Chi tiết sản
+                    <button class="show-product" href="/chi-tiet-san-pham">Chi tiết sản
                         phẩm</button>
                 </div>
             </div>
@@ -151,10 +151,10 @@
         <div style="width: 100%;" class="product-watch">
             <div *ngFor="let item of imagesProductWatch" class="article-item article-item-list">
                 <div class="article-image">
-                    <a [routerLink]="['/chi-tiet-san-pham']" (click)="ref.close()"><img [src]="item"></a>
+                    <a target="_self" href="/chi-tiet-san-pham" (click)="ref.close()"><img [src]="item"></a>
                 </div>
                 <div class="article-info">
-                    <a [routerLink]="['/chi-tiet-san-pham']" (click)="ref.close()" class="article-title">
+                    <a target="_self" href="/chi-tiet-san-pham" (click)="ref.close()" class="article-title">
                         Mật Trà Kombucha Cốt
                         Chuối
                     </a>

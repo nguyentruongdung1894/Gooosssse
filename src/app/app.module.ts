@@ -7,15 +7,14 @@ import { ApplModule } from './appl/appl.module';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { RouterModule, Routes } from '@angular/router';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
 
 ];
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,

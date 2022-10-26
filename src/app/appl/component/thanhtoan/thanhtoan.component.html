@@ -1,6 +1,6 @@
 <div class="container checkout">
     <div class="breadcrumb-small">
-        <a [routerLink]="['/gio-hang']" title="Quay trở về giỏ hàng">Giỏ Hàng</a>
+        <a href="/gio-hang" title="Quay trở về giỏ hàng">Giỏ Hàng</a>
         <span aria-hidden="true">></span>
         <span>Thanh toán</span>
     </div>
@@ -10,15 +10,16 @@
                 <div>
                     <label class="lbl-h1">Thông Tin Vận Chuyển</label>
                 </div>
-                <div class="login">
+                <div class="login" *ngIf="!account.username">
                     <span>Bạn đã có tài khoản?</span>
-                    <a><span>Đăng nhập</span></a>
+                    <a (click)="openDialogLogin()"><span>Đặng nhập</span></a>
                 </div>
                 <div class="location_data">
-                    <div class="name"><input type="text" pInputText placeholder="Họ và tên" /></div>
+                    <div class="name"><input #name [(ngModel)]="account.username" type="text" pInputText
+                            placeholder="Họ và tên" /></div>
                     <div class="email-phone">
-                        <input type="email" pInputText placeholder="Email" />
-                        <input type="tel" pInputText placeholder="Điện thoại" />
+                        <input #email type="email" [(ngModel)]="account.email" pInputText placeholder="Email" />
+                        <input #tel type="tel" [(ngModel)]="account.phone" pInputText placeholder="Điện thoại" />
                     </div>
                     <div class="address"><input type="text" pInputText placeholder="Địa chỉ" /></div>
                     <div class="city">
@@ -113,20 +114,20 @@
             </div>
             <div class="button-box">
                 <button pButton pRipple type="button" label="Thanh toán" class="p-button-danger"
-                    [routerLink]="['/dat-hang']"></button>
+                    href="/dat-hang"></button>
             </div>
         </div>
         <div class="order-bar">
             <div class="product-order">
                 <div class="image">
                     <div class="product_image" *ngFor="let item of product">
-                        <a [routerLink]="['/chi-tiet-san-pham']">
+                        <a target="_self" href="/chi-tiet-san-pham">
                             <img src="//product.hstatic.net/200000170631/product/mat-tra-kombucha-cot-chuoi-500ml_0d0457c2e57048c0be7305d0953ae0f2_medium.jpg"
                                 alt="Mật Trà Kombucha Cốt Chuối">
                         </a>
                         <div class="item-content">
                             <div>
-                                <a [routerLink]="['/chi-tiet-san-pham']">{{item.title}}
+                                <a target="_self" href="/chi-tiet-san-pham">{{item.title}}
                                 </a><br>
                                 <span class="variant_title">{{item.variant}}</span>
                             </div>
@@ -142,7 +143,7 @@
             <div class="order-summary">
                 <span class="p-float-label">
                     <input id="float-input" type="text" pInputText cher>
-                    <label for="float-input">Mã giảm giá</label>
+                    <label for="float-input">Mã giản giá</label>
                 </span>
                 <p-button label="Sử dụng"></p-button>
             </div>

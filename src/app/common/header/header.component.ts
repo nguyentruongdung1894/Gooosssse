@@ -1,17 +1,19 @@
-import { Component, OnInit, Output, Input, Renderer2, ViewChild, ElementRef, AfterViewInit, EventEmitter, AfterContentInit, AfterContentChecked, HostListener } from '@angular/core';
+import { Component, OnInit, Output, Input, Renderer2, ViewChild, ElementRef, AfterViewInit, EventEmitter, AfterContentInit, AfterContentChecked, HostListener, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { OverlayPanel } from 'primeng/overlaypanel';
 import { LoginComponent } from 'src/app/appl/component/login/login.component';
+import { ComponentBaseComponent } from '../componentBase/componentBase.component';
 import { Utils } from '../util/utils';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css'],
-    providers: [DialogService]
+    providers: [DialogService, MessageService]
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent extends ComponentBaseComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
     @ViewChild('op', { static: false }) op!: OverlayPanel;
     isSlide: boolean = false;
@@ -21,8 +23,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     account: any = null;
     isaccount = false;
     private _visibleSidebar = false;
-
-    doitendodi = false;
     @Input() set visibleSidebar(value: any) {
         this._visibleSidebar = value;
         if (value) {
@@ -46,18 +46,13 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     constructor(
         private render: Renderer2,
         private router: Router,
-        private dialogService: DialogService
-    ) { }
+        private dialogService: DialogService,
+        private messageService1: MessageService
+    ) {
+        super(messageService1);
+    }
 
     ngOnInit() {
-
-        // sessionStorage.setItem('account', JSON.stringify({
-        //     'username': 'Tuyền',
-        //     'phone': '0986723647',
-        //     'email': 'tuyen@gmail.com',
-        // }));
-        // this.account = JSON.parse(sessionStorage.getItem("account") as any);
-
     }
 
     ngAfterViewInit() {
@@ -76,21 +71,23 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         });
     }
 
-    onLogOut() {
-        sessionStorage.removeItem("account");
-        location.reload();
+    ngAfterViewChecked(): void {
+        this.account = JSON.parse(sessionStorage.getItem("account") as any);
     }
 
-    onClick_ReGioHang(){
-        this.router.navigate(['gio-hang']);
+    onLogOut() {
+        this.op.hide();
+        setTimeout(() => {
+            sessionStorage.removeItem("account");
+            location.reload();
+        }, 100);
     }
 
     onClickCart(event: any) {
         this.visibleSidebar = false;
         Utils.sha256((Math.random() + 1).toString(36).substring(7)).then(eCode => {
             sessionStorage.setItem(eCode, JSON.stringify(this.product));
-
-            this.router.navigate(['thanh-toan', eCode]);
+            window.open(`${window.location.origin}/thanh-toan?code=${eCode}`, "_self");
         });
     }
 
@@ -131,7 +128,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
             baseZIndex: 10000,
             dismissableMask: true,
             data: {
-                login: login
+                login: login,
+                func: this.showMessage.bind(this)
             }
         });
     }

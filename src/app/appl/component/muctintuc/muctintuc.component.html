@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container">
     <div class="breadcrumb-small">
-        <a [routerLink]="['/']" title="Quay trở về trang chủ">Trang chủ</a>
+        <a target="_self" href="/" title="Quay trở về trang chủ">Trang chủ</a>
         <span aria-hidden="true">/</span>
         <span>Tin tức</span>
         <span aria-hidden="true">/</span>
@@ -11,13 +11,13 @@
         </div>
     </div>
     <div style="text-align: center;">
-        <div *ngFor="let item of tintucList" class="article-item article-item-list">
+        <div *ngFor="let item of postList" class="article-item article-item-list">
             <div class="article-image">
-                <a [routerLink]="['/chi-tiet-tin-tuc']"><img [src]="item"></a>
+                <a (click)="detailPost(item['id'])" target="_self"><img [src]="item['postImage']"></a>
             </div>
             <div class="article-info">
-                <a [routerLink]="['/chi-tiet-tin-tuc']" class="article-title">
-                    Tin nông nghiệp VN số 1 ruộng rươi
+                <a (click)="detailPost(item['id'])" target="_self" class="article-title">
+                    {{item['postTitle']}}
                 </a>
                 <div>
                     Gạo ST25 sát trắng ruộng rươi nguyên cám 100%
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="paging">
-        <span>Xem thêm</span>
+        <span *ngIf="isShowButton">Xem thêm</span>
     </div>
     <div>
         <div class="group">
@@ -60,10 +60,10 @@
         <div>
             <div *ngFor="let item of baochiList" class="article-item article-item-list">
                 <div class="article-image">
-                    <a [routerLink]="['/chi-tiet-tin-tuc']"><img [src]="item"></a>
+                    <a target="_self" href="/chi-tiet-tin-tuc" target="_self"><img [src]="item"></a>
                 </div>
                 <div class="article-info">
-                    <a [routerLink]="['/chi-tiet-tin-tuc']" class="article-title">
+                    <a target="_self" href="/chi-tiet-tin-tuc" target="_self" class="article-title">
                         Bản tin thị trường Nông Lâm Thủy sản
                     </a>
                     <div>

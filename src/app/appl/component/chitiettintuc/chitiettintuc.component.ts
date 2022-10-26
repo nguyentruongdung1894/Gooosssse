@@ -1,4 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { ComponentBaseComponent } from 'src/app/common/componentBase/componentBase.component';
+import { HttpService } from 'src/app/common/service/http-service';
+import { Utils } from 'src/app/common/util/utils';
 
 @Component({
     selector: 'app-chitiettintuc',
@@ -6,8 +10,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     styleUrls: ['./chitiettintuc.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class ChitiettintucComponent implements OnInit {
-
+export class ChitiettintucComponent extends ComponentBaseComponent implements OnInit {
+    @ViewChild('content', { static: true }) content!: ElementRef;
     listTinTuc = [
         'Mật trà Kombucha thảo mộc 500ml',
         'Mật trà Kombucha thảo mộc 500ml',
@@ -20,10 +24,21 @@ export class ChitiettintucComponent implements OnInit {
         'Mật trà Kombucha thảo mộc 500ml',
         'Mật trà Kombucha thảo mộc 500ml',
     ]
-
-    constructor() { }
+    post: any;
+    constructor(private httpService: HttpService) {
+        super(new MessageService);
+    }
 
     ngOnInit() {
+        this.showDialog('on');
+        const id = window.location.search.split('?code=')[1];
+        this.httpService.reqeustApiget('posts').subscribe((response: any) => {
+            console.log(response.postList);
+            this.post = (response.postList as []).find(x => x['id'] === +(id));
+            this.post.postDate = Utils.timeStempToDateFormat(this.post.postDate);
+            this.content.nativeElement.innerHTML = this.post.postContent;
+            this.showDialog('off');
+        });
     }
 
 }
